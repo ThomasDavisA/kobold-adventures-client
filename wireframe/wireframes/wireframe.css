@@ -1,0 +1,324 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: bisque;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    width: 90vw;
+    height: 60vh;
+    background-color: lightgray;
+}
+
+button {
+    padding: 1em;
+    border-radius: 10px;
+    width: 90%;
+    margin: 10px auto;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input {
+    margin-bottom: 15px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.container {
+    display: flex;
+    margin: 20px;
+    flex-flow: column nowrap;
+}
+
+.title-box {
+    height: 80vh;
+    margin: 10vh auto;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+}
+
+.character-bar {
+    position: absolute;
+    width: 100%;
+    top: 85vh;
+    background-color: lightgreen;
+    display: flex;
+}
+
+canvas {
+    margin: 0;
+    width: 15vh;
+    height: 15vh;
+    background-color: black;
+}
+
+.bar-box {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+}
+
+.bar-container {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bar-background {
+    margin: 0;
+    height: 10px;
+    width: 40vw;
+    background-color: grey;
+    border-radius: 5px;
+}
+
+.progress-background {
+    width: 90%;
+    margin: 10px auto;
+    background: repeating-linear-gradient(to right, grey, grey 32%, black 32%, black 34%);
+}
+
+.progress-complete {
+    margin: 0;
+    height: 100%;
+    width: 34%;
+    border-radius: 5px;
+    background-color: greenyellow;
+}
+
+.finished {
+    width: 100%;
+}
+
+.stat-button {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.life-bar {
+    margin: 0;
+    height: 100%;
+    width: 80%;
+    border-radius: 5px;
+    background-color: red;
+}
+
+.energy-bar {
+    margin: 0;
+    height: 100%;
+    width: 40%;
+    border-radius: 5px;
+    background-color: yellow;
+}
+
+.logout-button {
+    padding: 5px;
+    margin: 15px 0;
+    margin-right: 10px;
+}
+
+h3 {
+    margin: 0 10px 0 0;
+    text-align: left;
+}
+
+.gameplay-box {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.news-box {
+    margin: 10px auto;
+    padding: 10px 20px;
+    border-bottom: 1px solid black;
+}
+
+.button-box {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content: space-evenly;
+}
+
+.adventure-box {
+    padding: 0 20px;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.stats-list {
+    display: flex;
+    margin: 0;
+    height: 20vh;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+li {
+    list-style: none;    
+}
+
+.action-button {
+    width: 40%;
+}
+
+p {
+    padding: 5px;
+}
+
+.equipment-container{
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    border-bottom: 2px solid black;
+    padding: 10px 0;
+}
+
+.equipment-line{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 5px auto;
+}
+
+.equip-canvas {
+    height: 40px;
+    width: 40px;
+}
+
+span {
+    margin: 0;
+}
+
+.equip-list {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.text-equip {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0;
+    margin-left: 5px;
+}
+
+.flex-gap {
+    margin: 5px 8px;
+}
+
+.selected {
+    border: 5px solid red;
+}
+
+.common {
+    border: 3px solid grey;
+}
+
+.uncommon {
+    border: 3px solid greenyellow;
+}
+
+.rare {
+    border: 3px solid blue;
+}
+
+.epic {
+    border: 3px solid purple;
+}
+
+.difficulty-bar {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.difficulty-button {
+    width: 90px;
+    padding: 15px 15px;
+    text-align: center;
+}
+
+.level-box {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.stats-total {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.stats-box {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.stats-total > h4 {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+@media screen and (min-width: 425px) {
+    button {
+        width: 277px;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .stats-total {
+        width: 450px;
+        
+    }
+
+    .stats-total > h4 {
+        display: inline-block;
+        margin: 10px 40px;
+    }
+    
+}
+
+@media screen and (min-width: 768px) {
+ .gameplay-box {
+     width: 768px;
+     min-height: fit-content;
+ }
+
+ 
+
+ .equipment-container {
+     flex-flow: column wrap;
+ }
+}
+
+a {
+    margin: 20px auto;
+    
+}

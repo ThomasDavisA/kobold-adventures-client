@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./wireframe.css">
+    <title>Equipment!</title>
+</head>
+
+<body>
+    <div class="gameplay-box">
+        <div class="adventure-box">
+            <h2>Status!</h2>
+
+            <h2>KoboldUser333</h2>
+            <div class="level-box">
+                <h3>Player Level: 3</h3>
+                <h3>Kobold Level: 5</h3>
+            </div>
+
+
+            <div class="stats-box">
+                <h3>Stats</h3>
+                <div class="stats-total">
+                    <h4>Muscle: 8 + 4</h4>
+                    <h4>Fitness: 8 + 3</h4>
+                    <h4>Eloquence: 8 + 5</h4>
+                    <h4>Intellect: 8 + 2</h4>
+                    <h4>Mana: 8 + 5</h4>
+                </div>
+            </div>
+
+            <h3>Worn Equipment</h3>
+            <div class="equipment-container">
+                <div class="equipment-line">
+                    <canvas class="equip-canvas selected"></canvas>
+                    <div class="text-equip"><span class="equip-line">Kobold Hat of Extra Good</span><span
+                            class="equip-line">Muscle +1, Mana +2</span></div>
+                </div>
+                <div class="equipment-line">
+                    <canvas class="equip-canvas common"></canvas>
+                    <div class="text-equip"><span class="equip-line">Cloth Loincloth</span><span
+                            class="equip-line">Muscle
+                            +2, Fitness + 1</span></div>
+                </div>
+                <div class="equipment-line">
+                    <canvas class="equip-canvas rare"></canvas>
+                    <div class="text-equip"><span class="equip-line">Incredible Gloves of Yss-Yip</span><span
+                            class="equip-line">Eloquence +5, Mana +3, Muscle +1</span></div>
+                </div>
+                <div class="equipment-line">
+                    <canvas class="equip-canvas uncommon"></canvas>
+                    <div class="text-equip"><span class="equip-line">Tailored claw-cozies</span><span
+                            class="equip-line">Fitness +3, Intellect +2</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="adventure-box">
+            <button>Return to Main Screen</button>
+        </div>
+    </div>
+
+    <div class="character-bar">
+        <canvas class="kobold-portrait"></canvas>
+        <div class="bar-box">
+            <div class="bar-container">
+                <h3>Life:</h3>
+                <div class="bar-background">
+                    <div class="life-bar"></div>
+                </div>
+            </div>
+            <div class="bar-container">
+                <h3>Energy:</h3>
+                <div class="bar-background">
+                    <div class="energy-bar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

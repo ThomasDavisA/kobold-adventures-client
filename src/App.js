@@ -1,24 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import './App.css';
+
+import LoginPage from './routes/LoginPage';
+import NewsPage from './routes/NewsPage';
+import AreaSelectPage from './routes/AreaSelectPage';
+import DifficultySelectPage from './routes/DifficultySelectPage';
+import AdventurePage from './routes/AdventurePage';
+import StatusPage from './routes/StatusPage';
+import StatusBar from './component/StatusBar';
+import RewardsPage from './routes/RewardsPage';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Switch>
+          <Route path='/' exact component={LoginPage} />
+          <Route path='/main' exact component={NewsPage} />
+          <Route path='/main/areaselect' component={AreaSelectPage} />
+          <Route path='/main/difficultyselect' component={DifficultySelectPage} />
+          <Route path='/main/adventure' exact component={AdventurePage} />
+          <Route path='/main/adventure/rewards' component={RewardsPage} />
+          <Route path='/main/status/' component={StatusPage} />
+        </Switch>
+        <Route path='/main' component={StatusBar} />
+      </BrowserRouter>
     </div>
   );
 }
