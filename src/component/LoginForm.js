@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-import AuthApiService from '../services/auth-api-service'
+import KoboldsContext from '../context/KoboldContext';
+import AuthApiService from '../services/auth-api-service';
 
 export default class LoginForm extends Component {
+    static contextType = KoboldsContext;
+
     state = { error: null }
 
     onLoginSuccess() {
@@ -19,9 +22,10 @@ export default class LoginForm extends Component {
             .then(res => {
                 username.value = '';
                 password.value = '';
-                console.log('a hit')
+                this.context.kobold = res;
+                console.log(this.context)
                 this.props.history.push(`/main`)
-                console.log('b hit')
+                
             })
             .catch(res => {
                 console.error(res)

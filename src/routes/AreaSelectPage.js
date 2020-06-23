@@ -8,12 +8,12 @@ export default class AreaSelectPage extends Component {
     render() {
         return (
             <>
-                <div class="news-box">
+                <div className="news-box">
                     <h3>Adventure!</h3>
                 </div>
 
                 <h3>Areas:</h3>
-                <button class='adv-button'>The Wooded Path</button>
+                <button className='adv-button'>The Wooded Path</button>
                 <Link to="/main/difficultyselect/">
                     <button>Lakeside</button>
                     <button>Near the Kobold Den</button>

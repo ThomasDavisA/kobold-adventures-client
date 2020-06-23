@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 
 import LoginPage from './routes/LoginPage';
@@ -10,11 +10,12 @@ import AdventurePage from './routes/AdventurePage';
 import StatusPage from './routes/StatusPage';
 import StatusBar from './component/StatusBar';
 import RewardsPage from './routes/RewardsPage';
+import { KoboldContextProvider } from './context/KoboldContext';
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <KoboldContextProvider>
         <Switch>
           <Route path='/' exact component={LoginPage} />
           <Route path='/main' exact component={NewsPage} />
@@ -25,7 +26,7 @@ function App() {
           <Route path='/main/status/' component={StatusPage} />
         </Switch>
         <Route path='/main' component={StatusBar} />
-      </BrowserRouter>
+      </KoboldContextProvider>
     </div>
   );
 }
