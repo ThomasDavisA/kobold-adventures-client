@@ -4,6 +4,10 @@ import StatusBar from '../component/StatusBar';
 
 export default class AreaSelectPage extends Component {
 
+    setLocation = event => {
+        console.log(event);
+    }
+
 
     render() {
         return (
@@ -12,14 +16,7 @@ export default class AreaSelectPage extends Component {
                     <h3>Adventure!</h3>
                 </div>
 
-                <h3>Areas:</h3>
-                <button className='adv-button'>The Wooded Path</button>
-                <Link to="/main/difficultyselect/">
-                    <button>Lakeside</button>
-                    <button>Near the Kobold Den</button>
-                    <button>The Dragon's Lair</button>
-                </Link>
-
+              
 
                 <button onClick={() => this.props.history.goBack()}>Go back</button>
 

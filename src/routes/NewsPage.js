@@ -4,6 +4,9 @@ import StatusBar from '../component/StatusBar';
 
 export default class NewsPage extends Component {
 
+    handleLocations = () => {
+        
+    }
 
     render() {
         return (

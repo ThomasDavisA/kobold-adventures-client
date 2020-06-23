@@ -23,24 +23,33 @@ export const nullKobold = {
 
 const KoboldContext = React.createContext({
     kobold: nullKobold,
-    setKobold: () => {}
+    location: null,
+    setKobold: () => {},
+    setLocation: () => {}
 });
 
 export default KoboldContext;
 
 export class KoboldContextProvider extends React.Component {
     state = {
-        kobold: nullKobold
+        kobold: nullKobold,
+        location: null,
+        difficulty: null
     };
 
     setKobold = kobold => {
         this.setState({ kobold })
     };
 
+    setLocation = location => {
+        this.setState({ location })
+    };
+
     render() {
         const value = {
             kobold: this.state.kobold,
-            setKobold: this.setKobold
+            setKobold: this.setKobold,
+            setLocation: this.setLocation
         }
         return (
             <KoboldContext.Provider value={value}>
