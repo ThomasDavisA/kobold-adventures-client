@@ -22,7 +22,7 @@ export default class LoginForm extends Component {
             .then(res => {
                 username.value = '';
                 password.value = '';
-                this.context.kobold = res;
+                this.context.setKobold(res);
                 console.log(this.context)
                 this.props.history.push(`/main`)
                 

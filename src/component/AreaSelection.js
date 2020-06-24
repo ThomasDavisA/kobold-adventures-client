@@ -24,6 +24,7 @@ export default class AreaSelection extends Component {
         return (
             <>
             <h3>Areas:</h3>
+            {this.filterLocations()}
             <button onClick={() => this.handleClick('The Lake')}>The Lake</button>
             </>
         )

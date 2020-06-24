@@ -12,8 +12,15 @@ const LocationsApiService = {
                 return res.json();
             })
     },
-    getAdventure(location) {
-
+    getAdventure(locationId) {
+        return fetch(`${config.API_ENDPOINT}/adventure/${locationId}`, {
+            headers: {
+                'content-type': 'application/json'
+            },
+        })
+            .then(res => {
+                return res.json();
+            })
     }
 }
 

@@ -24,8 +24,21 @@ export const nullKobold = {
 const KoboldContext = React.createContext({
     kobold: nullKobold,
     location: null,
+    adventure: {
+        encounter: null,
+        resolutions: null
+    },
+    resolve: {
+        resolveFlag: false,
+        resolveSuccess: null,
+        resolveMessage: null,
+    },
     setKobold: () => {},
-    setLocation: () => {}
+    setLocation: () => {},
+    setAdventure: () => {},
+    resolveAction: () => {},
+    clearAction: () => {},
+    clearAdventure: () => {}
 });
 
 export default KoboldContext;
@@ -34,6 +47,15 @@ export class KoboldContextProvider extends React.Component {
     state = {
         kobold: nullKobold,
         location: null,
+        adventure: {
+            encounter: null,
+            resolutions: null
+        },
+        resolve: {
+            resolveFlag: false,
+            resolveSuccess: null,
+            resolveMessage: null,
+        },
         difficulty: null
     };
 
@@ -45,11 +67,56 @@ export class KoboldContextProvider extends React.Component {
         this.setState({ location })
     };
 
+    setAdventure = (enc, res) => {
+        this.setState({
+            adventure: {
+                encounter: enc,
+                resolutions: res
+            }
+        })
+    };
+
+    resolveAction = (resolve) => {
+        this.setState({
+            resolve: {
+                resolveFlag: true,
+                resolveSuccess: resolve.status,
+                resolveMessage: resolve.message,
+            }
+        })
+    };
+
+    clearAction = () => {
+        this.setState({
+            resolve: {
+                resolveFlag: false,
+                resolveSuccess: null,
+                resolveMessage: null,
+            }
+        })
+    };
+
+    clearAdventure = () => {
+        this.setState({
+            adventure: {
+                encounter: null,
+                resolutions: null
+            }
+        })
+    };
+
     render() {
         const value = {
             kobold: this.state.kobold,
+            location: this.state.location,
+            adventure: this.state.adventure,
+            resolve: this.state.resolve,            
             setKobold: this.setKobold,
-            setLocation: this.setLocation
+            setLocation: this.setLocation,
+            setAdventure: this.setAdventure,
+            resolveAction: this.resolveAction,
+            clearAction: this.clearAction,
+            clearAdventure: this.clearAdventure
         }
         return (
             <KoboldContext.Provider value={value}>
