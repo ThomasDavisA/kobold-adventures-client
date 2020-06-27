@@ -38,11 +38,11 @@ export default class AdventurePage extends Component {
                 <h3>Event!</h3>
                 {this.renderEncounter()}
 
-                <div className="button-box">
-
-                    {this.renderResolutions()}
-
-                </div>
+                {!this.context.resolve.resolveFlag &&
+                    <div className="button-box">
+                        {this.renderResolutions()}
+                    </div>
+                }
 
                 <div className="results-box">
                     {this.context.resolve.resolveFlag &&
@@ -52,7 +52,6 @@ export default class AdventurePage extends Component {
                             <button onClick={() => this.continueAdventure()}>Continue</button>
                         </>}
                 </div>
-                <StatusBar />
             </>
         )
     }

@@ -2,6 +2,7 @@ import React from 'react';
 
 export const nullKobold = {
     //TODO: add kobold stats
+    kobold_id: null,
     kobold_name: null,
     kobold_level: null,
     kobold_xp: null,

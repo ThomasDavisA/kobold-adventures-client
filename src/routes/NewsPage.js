@@ -20,8 +20,6 @@ export default class NewsPage extends Component {
                 <Link to='/main/areaselect'><button className='adv-button'>Go Adventuring!</button></Link>
                 <Link to='/main/status'><button>Kobold Status</button></Link>
                 <Link to='/'><button>Logout</button></Link>
-
-                <StatusBar />
             </>
         )
     }

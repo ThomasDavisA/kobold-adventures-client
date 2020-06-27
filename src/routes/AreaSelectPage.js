@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import StatusBar from '../component/StatusBar';
 import LocationsService from '../services/locations-api-service';
 import KoboldsContext from '../context/KoboldContext';
+import KoboldsApiService from '../services/kobolds-api-service';
 
 export default class AreaSelectPage extends Component {
     static contextType = KoboldsContext;
@@ -21,7 +22,6 @@ export default class AreaSelectPage extends Component {
                 console.log(this.context)
                 this.props.history.push(`/main/adventure`);
             })
-        
     }
 
     render() {

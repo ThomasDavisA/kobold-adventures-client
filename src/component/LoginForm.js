@@ -39,10 +39,10 @@ export default class LoginForm extends Component {
             <form className='LoginForm' onSubmit={this.handleSubmit}>
                 <div className='container'>
                     <label htmlFor='username'>Username</label>
-                    <input name='username' type='text'></input>
+                    <input name='username' type='text' value='dunder'></input>
 
                     <label htmlFor="password">Password</label>
-                    <input name='password' type="text"></input>
+                    <input name='password' type="text" value='password'></input>
                 </div>
                 <div className="container">
                     <button type='submit'>Login</button>

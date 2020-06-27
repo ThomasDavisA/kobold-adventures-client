@@ -1,49 +1,54 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import KoboldsContext from '../context/KoboldContext';
 import StatusBar from '../component/StatusBar';
+import KoboldsApiService from '../services/kobolds-api-service';
 
 export default class RewardsPage extends Component {
+    static contextType = KoboldsContext;
 
+    state = {
+        rewards: null,
+        levelUp: null
+    }
+
+    componentDidMount = () => {
+        KoboldsApiService.getRewards(this.context.kobold.kobold_id)
+            .then(rewards => {
+                this.setState({
+                    rewards,
+                    levelUp: rewards.levelUp
+                });
+            });
+    }
 
     render() {
+        console.log(this.state)
         return (
             <>
+                {this.state.rewards &&
+                    <div className="adventure-box">
+                        <div className="bar-background progress-background"><div className="progress-complete finished"></div></div>
+                        <h2>Adventure Complete!</h2>
 
-                <div class="adventure-box">
-                    <div class="bar-background progress-background"><div class="progress-complete finished"></div></div>
-                    <h2>Adventure Complete!</h2>
-                    <br />
-                    <p>Treasure:
-                        <ul>
-                            <li>Wooden Nickels: 6!</li>
-                            <li>Kobold XP: 5!</li>
-                        </ul>
-                    </p>
-
-                    <p>Equipment:
-                        <ul>
-                            <li>Kobold Stick with Extra Kobold</li>
-                            <li>Cloth Brigadine of Rapture</li>
-                        </ul>
-                    </p>
-                </div>
-
-                <div class="adventure-box">
-                    <h3>Level up!</h3>
-                    <p>Good job being a kobold!  Choose where to focus your points:</p>
-                    <ul class="stats-list">
-                        <li>Muscle: 3 <button class="stat-button">+</button></li>
-                        <li>Fitness: 2 <button class="stat-button">+</button></li>
-                        <li>Intellect: 5 <button class="stat-button">+</button></li>
-                        <li>Eloquence: 8 <button class="stat-button">+</button></li>
-                        <li>Mana: 7 <button class="stat-button">+</button></li>
-                    </ul>
-                </div>
+                        <p>Kobold XP: {this.state.rewards.xp}</p>
+                        <h4>Treasure:
+                                    <ul>
+                                <li>Wooden Nickels: {this.state.rewards.nickles}</li>
+                                <li>Equipment Scraps: {this.state.rewards.scrap}</li>
+                                <li>Dragon Influence: {this.state.rewards.influence}</li>
+                            </ul>
+                        </h4>
+                    </div>}
+                {this.state.levelUp &&
+                    <div className='adventure-box'>
+                        <h3>Level Up!</h3>
+                        <h4>You gain 3 status points!</h4>
+                        <p>Use them in the status menu.</p>
+                    </div>}
                 <Link to='/main'>
-                <button>Hooray!  End your Adventure.</button>
+                    <button>Hooray!  End your Adventure.</button>
                 </Link>
-
-                <StatusBar />
             </>
         )
     }

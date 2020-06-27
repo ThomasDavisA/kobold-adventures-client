@@ -6,7 +6,7 @@ export default class ResolutionButton extends Component {
     static contextType = KoboldsContext;
 
     handleClick = (id) => {
-        KoboldsApiService.getEncounterOutcome(id)
+        KoboldsApiService.getEncounterOutcome(id, this.context.kobold.kobold_id)
             .then(resolve => {
                 console.log(resolve)
                 this.context.resolveAction(resolve)
