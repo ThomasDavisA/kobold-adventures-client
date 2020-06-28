@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import StatusBar from '../component/StatusBar';
 import KoboldsContext from '../context/KoboldContext';
 import ResolutionButton from '../component/ResolutionButton';
+import LocationsService from '../services/locations-api-service';
+import KoboldsApiService from '../services/kobolds-api-service';
 
 export default class AdventurePage extends Component {
     static contextType = KoboldsContext;
@@ -18,7 +19,7 @@ export default class AdventurePage extends Component {
     renderResolutions = () => {
         const resolutions = this.context.adventure.resolutions;
         const render = resolutions.map(res => {
-            return <ResolutionButton resolution={res} className='action-button' />
+            return <ResolutionButton key={res.id} resolution={res} className='action-button' />
         })
         return render;
     }
@@ -26,7 +27,24 @@ export default class AdventurePage extends Component {
     continueAdventure = () => {
         this.context.clearAction();
         this.context.clearAdventure();
-        this.props.history.push('/main/adventure/rewards');
+        KoboldsApiService.getAdventureProgress(this.context.kobold.kobold_id)
+            .then(progress => {
+                if (progress >= 100) {
+                    KoboldsApiService.clearAdventureProgress(this.context.kobold.kobold_id)
+                        .then(res => {
+                            this.context.clearAdventureProgress();
+                            this.props.history.push('/main/adventure/rewards');
+                        })
+                }
+                else {
+                    this.context.setAdventureProgress(progress);
+                    LocationsService.getAdventure(this.context.location)
+                        .then(adventure => {
+                            this.context.setAdventure(adventure[0], adventure[1])
+                            this.props.history.push(`/main/adventure`);
+                        })
+                }
+            })
     }
 
     render() {
@@ -35,12 +53,16 @@ export default class AdventurePage extends Component {
                 <div className="bar-background progress-background">
                     <div className="progress-complete"></div>
                 </div>
+                <h4>Progress: {this.context.adventure_progress}%</h4>
+
                 <h3>Event!</h3>
-                {this.renderEncounter()}
+                {this.context.adventure.encounter &&
+                this.renderEncounter()}
 
                 {!this.context.resolve.resolveFlag &&
                     <div className="button-box">
-                        {this.renderResolutions()}
+                        {this.context.adventure.encounter &&
+                        this.renderResolutions()}
                     </div>
                 }
 

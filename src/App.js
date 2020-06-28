@@ -10,6 +10,7 @@ import AdventurePage from './routes/AdventurePage';
 import StatusPage from './routes/StatusPage';
 import StatusBar from './component/StatusBar';
 import RewardsPage from './routes/RewardsPage';
+import RegisterPage from './routes/RegisterPage';
 import { KoboldContextProvider } from './context/KoboldContext';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <KoboldContextProvider>
         <Switch>
           <Route path='/' exact component={LoginPage} />
+          <Route path='/register' exact component={RegisterPage} />
           <Route path='/main' exact component={NewsPage} />
           <Route path='/main/areaselect' component={AreaSelectPage} />
           <Route path='/main/difficultyselect' component={DifficultySelectPage} />

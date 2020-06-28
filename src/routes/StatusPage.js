@@ -82,7 +82,7 @@ export default class StatusPage extends Component {
                         <h2>{this.context.kobold.kobold_name}</h2>
                         <div className="level-box">
                             <h3>Kobold Level: {this.context.kobold.kobold_level}</h3>
-                            <h4>{this.context.kobold_xp}</h4>
+                            <h4>Koobld XP:{this.context.kobold.kobold_xp}</h4>
                         </div>
 
                         <div className='currency-box'>

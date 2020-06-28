@@ -25,6 +25,7 @@ export const nullKobold = {
 const KoboldContext = React.createContext({
     kobold: nullKobold,
     location: null,
+    adventure_progress: null,
     adventure: {
         encounter: null,
         resolutions: null
@@ -37,9 +38,11 @@ const KoboldContext = React.createContext({
     setKobold: () => {},
     setLocation: () => {},
     setAdventure: () => {},
+    setAdventureProgress: () => {},
     resolveAction: () => {},
     clearAction: () => {},
-    clearAdventure: () => {}
+    clearAdventure: () => {},
+    clearAdventureProgress: () => {}
 });
 
 export default KoboldContext;
@@ -48,6 +51,7 @@ export class KoboldContextProvider extends React.Component {
     state = {
         kobold: nullKobold,
         location: null,
+        adventure_progress: null,
         adventure: {
             encounter: null,
             resolutions: null
@@ -74,6 +78,12 @@ export class KoboldContextProvider extends React.Component {
                 encounter: enc,
                 resolutions: res
             }
+        })
+    };
+
+    setAdventureProgress = progress => {
+        this.setState({
+            adventure_progress: progress
         })
     };
 
@@ -106,18 +116,27 @@ export class KoboldContextProvider extends React.Component {
         })
     };
 
+    clearAdventureProgress = () => {
+        this.setState({
+            adventure_progress: null
+        })
+    };
+
     render() {
         const value = {
             kobold: this.state.kobold,
             location: this.state.location,
             adventure: this.state.adventure,
+            adventure_progress: this.state.adventure_progress,
             resolve: this.state.resolve,            
             setKobold: this.setKobold,
             setLocation: this.setLocation,
             setAdventure: this.setAdventure,
+            setAdventureProgress: this.setAdventureProgress,
             resolveAction: this.resolveAction,
             clearAction: this.clearAction,
-            clearAdventure: this.clearAdventure
+            clearAdventure: this.clearAdventure,
+            clearAdventureProgress: this.clearAdventureProgress
         }
         return (
             <KoboldContext.Provider value={value}>

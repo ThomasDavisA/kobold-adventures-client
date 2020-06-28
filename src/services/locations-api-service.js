@@ -1,10 +1,12 @@
 import config from '../config';
+import TokenService from '../services/token-service';
 
 const LocationsApiService = {
     getLocations(Koboldlevel) {
         return fetch(`${config.API_ENDPOINT}/locations`, {
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`
             },
             body: JSON.stringify(Koboldlevel)
         })
@@ -15,7 +17,8 @@ const LocationsApiService = {
     getAdventure(locationId) {
         return fetch(`${config.API_ENDPOINT}/adventure/${locationId}`, {
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`
             },
         })
             .then(res => {

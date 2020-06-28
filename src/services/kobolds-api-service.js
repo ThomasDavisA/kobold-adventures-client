@@ -1,16 +1,69 @@
 import config from '../config';
+import TokenService from '../services/token-service';
 
 const KoboldsApiService = {
     getKobold(KoboldId) {
-        return fetch(`${config.API_ENDPOINT}/kobold/${KoboldId}`)
+        return fetch(`${config.API_ENDPOINT}/kobold/${KoboldId}`, {
+            headers: {
+                'content-type': 'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`
+            },
+        })
             .then(res => {
                 return res.json();
             })
     },
+    getKoboldByToken() {
+        return fetch(`${config.API_ENDPOINT}/kobold/login`, {
+            headers: {
+                'content-type': 'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`
+            },
+        })
+            .then(res => {
+                return res.json();
+            })
+    },
+    postKobold(username) {
+        return fetch(`${config.API_ENDPOINT}/kobold/`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`
+            },
+            body: JSON.stringify({
+                username
+            })
+        })
+            .then(res => {
+                return res.json();
+            })
+    },
+    getAdventureProgress(koboldId) {
+        return fetch(`${config.API_ENDPOINT}/adventure/${koboldId}/progress`, {
+            headers: {
+                'content-type': 'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`
+            },
+        })
+            .then(res => {
+                return res.json();
+            })
+    },
+    clearAdventureProgress(koboldId) {
+        return fetch(`${config.API_ENDPOINT}/adventure/${koboldId}/progress`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`
+            },
+        })
+    },
     getEncounterOutcome(resolutionId, koboldId) {
         return fetch(`${config.API_ENDPOINT}/adventure/resolution/${resolutionId}/${koboldId}`, {
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`
             },
 
         })
@@ -20,6 +73,10 @@ const KoboldsApiService = {
     },
     getRewards(koboldId) {
         return fetch(`${config.API_ENDPOINT}/adventure/rewards/${koboldId}`, {
+            headers: {
+                'content-type': 'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`
+            },
         })
             .then(res => {
                 return res.json();
@@ -29,7 +86,8 @@ const KoboldsApiService = {
         return fetch(`${config.API_ENDPOINT}/kobold/${KoboldId}`, {
             method: 'PATCH',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`
             },
             body: JSON.stringify({
                 kobold_unspent_points: stats.unspent,    

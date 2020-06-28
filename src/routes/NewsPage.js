@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import TokenService from '../services/token-service';
 import StatusBar from '../component/StatusBar';
 
 export default class NewsPage extends Component {
 
     handleLocations = () => {
         
+    }
+
+    handleLogout = () => {
+        TokenService.clearAuthToken()
     }
 
     render() {
@@ -19,7 +24,7 @@ export default class NewsPage extends Component {
 
                 <Link to='/main/areaselect'><button className='adv-button'>Go Adventuring!</button></Link>
                 <Link to='/main/status'><button>Kobold Status</button></Link>
-                <Link to='/'><button>Logout</button></Link>
+                <Link to='/'><button onClick={() => this.handleLogout()}>Logout</button></Link>
             </>
         )
     }

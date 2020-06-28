@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import TokenService from '../services/token-service';
 import KoboldsContext from '../context/KoboldContext';
 import AuthApiService from '../services/auth-api-service';
+import KoboldsApiService from '../services/kobolds-api-service';
 
 export default class LoginForm extends Component {
     static contextType = KoboldsContext;
@@ -8,7 +11,7 @@ export default class LoginForm extends Component {
     state = { error: null }
 
     onLoginSuccess() {
-        
+
     }
 
     handleSubmit = event => {
@@ -22,13 +25,18 @@ export default class LoginForm extends Component {
             .then(res => {
                 username.value = '';
                 password.value = '';
-                this.context.setKobold(res);
-                console.log(this.context)
-                this.props.history.push(`/main`)
-                
+                TokenService.saveAuthToken(res.authToken)
+                console.log(res.authToken)
+                KoboldsApiService.getKoboldByToken()
+                    .then(kobold => {
+                        console.log(kobold)
+                        this.context.setKobold(kobold);
+                        console.log(this.context)
+                        this.props.history.push(`/main`)
+                    })
+
             })
             .catch(res => {
-                console.error(res)
                 this.setState({ error: res.error });
             })
 
@@ -36,19 +44,23 @@ export default class LoginForm extends Component {
 
     render() {
         return (
+            <>
+            {this.state.error && 
+            <h3>{this.state.error}</h3>}
             <form className='LoginForm' onSubmit={this.handleSubmit}>
                 <div className='container'>
                     <label htmlFor='username'>Username</label>
-                    <input name='username' type='text' value='dunder'></input>
+                    <input name='username' type='text' ></input>
 
                     <label htmlFor="password">Password</label>
-                    <input name='password' type="text" value='password'></input>
+                    <input name='password' type='password' ></input>
                 </div>
                 <div className="container">
                     <button type='submit'>Login</button>
-                    <button >Register</button>
+                    <Link to='/register'><button >Register</button></Link>
                 </div>
             </form>
+            </>
         )
     }
 }
