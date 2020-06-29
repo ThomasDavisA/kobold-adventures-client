@@ -1,0 +1,20 @@
+.container__news {
+    background-color: aliceblue;
+    margin: 5vh .5em 1em .5em;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+.news__header {
+    margin: 1em 0;
+}
+
+.news__text {
+    border: 3px white solid;
+    border-radius: 1em;
+    padding: 1em;
+}
+
+.container__buttons {
+
+}

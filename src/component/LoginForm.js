@@ -5,6 +5,8 @@ import KoboldsContext from '../context/KoboldContext';
 import AuthApiService from '../services/auth-api-service';
 import KoboldsApiService from '../services/kobolds-api-service';
 
+import './LoginForm.css'
+
 export default class LoginForm extends Component {
     static contextType = KoboldsContext;
 
@@ -47,17 +49,17 @@ export default class LoginForm extends Component {
             <>
             {this.state.error && 
             <h3>{this.state.error}</h3>}
-            <form className='LoginForm' onSubmit={this.handleSubmit}>
-                <div className='container'>
-                    <label htmlFor='username'>Username</label>
-                    <input name='username' type='text' ></input>
+            <form className='form' onSubmit={this.handleSubmit}>
+                <div className='form__container'>
+                    <label classanme='form__label' htmlFor='username'>Username</label>
+                    <input className='form__input' name='username' type='text' ></input>
 
-                    <label htmlFor="password">Password</label>
-                    <input name='password' type='password' ></input>
+                    <label classanme='form__label' htmlFor='password'>Password</label>
+                    <input className='form__input' name='password' type='password' ></input>
                 </div>
-                <div className="container">
-                    <button type='submit'>Login</button>
-                    <Link to='/register'><button >Register</button></Link>
+                <div className="form__container">
+                    <button className='form__button' type='submit'>Login</button>
+                    <Link to='/register'><button className='form__button'>Register</button></Link>
                 </div>
             </form>
             </>

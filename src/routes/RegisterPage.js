@@ -6,6 +6,8 @@ import KoboldApiSerivce from '../services/kobolds-api-service';
 import KoboldsContext from '../context/KoboldContext';
 import TokenService from '../services/token-service';
 
+import './RegisterPage.css';
+
 export default class RegisterPage extends Component {
     static contextType = KoboldsContext;
 
@@ -13,20 +15,21 @@ export default class RegisterPage extends Component {
 
     handleSubmit = ev => {
         ev.preventDefault()
-        const { username, password } = ev.target
-
         this.setState({ error: null })
+        const { username, password } = ev.target
         AuthApiService.postUser({
             username: username.value,
             password: password.value,
 
         })
             .then(user => {
+                console.log(user)
                 AuthApiService.postLogin({
                     username: username.value,
                     password: password.value
                 })
                     .then(res => {
+                        console.log('success')
                         username.value = ''
                         password.value = ''
                         TokenService.saveAuthToken(res.authToken)
@@ -42,7 +45,6 @@ export default class RegisterPage extends Component {
             .catch(res => {
                 this.setState({ error: res.error })
             })
-
     }
 
     render() {
@@ -51,27 +53,32 @@ export default class RegisterPage extends Component {
         return (
             <form className='RegistrationForm' onSubmit={this.handleSubmit}>
 
-                <h3>Create a new Kobold</h3>
+                <h2>Create a new Kobold</h2>
 
-                <div role='alert'>
-                    {error && <p className='red'>{error}</p>}
-                </div>
+                {error &&
+                    <div className='form__alert' role='alert'>
+                        <p className='form__alert--red'>{error}</p>
+                    </div>
+                }
 
                 <div className='username'>
-                    <label htmlFor='RegistrationForm__user_name'>
-                        Username: 
+                    <label htmlFor='RegistrationForm__username'>
+                        Username:
                     </label>
-                    <input name='username' type='text' required id='RegistrationForm__user_name' />
+                    <input className='form__input' name='username' type='text' required id='RegistrationForm__username' />
                 </div>
                 <div className='password'>
                     <label htmlFor='RegistrationForm__password'>
-                        Password: 
+                        Password:
                     </label>
-                    <input name='password' type='password' required id='RegistrationForm__password' />
+                    <input className='form__input' name='password' type='password' required id='RegistrationForm__password' />
                 </div>
 
-                <Link to='/'><button>Go Back</button></Link>
-                <button type='submit'>Register</button>
+                <div className='form__container'>
+                    <button className='form__button' type='submit'>Register</button>
+                    <Link to='/'><button className='form__button' type='button'>Go Back</button></Link>
+                </div>
+
             </form>
         )
     }

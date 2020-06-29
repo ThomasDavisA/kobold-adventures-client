@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import LoginForm from '../component/LoginForm';
+import './LoginPage.css'
 
 export default class LoginPage extends Component {
 
@@ -7,9 +8,9 @@ export default class LoginPage extends Component {
     render() {
         return (
             <>
-                <h1>Kobold Adventures!</h1>
-                <h2>(error messages/register success/failures here)</h2>
-
+                <div className='div__header'>
+                    <h1>Kobold Adventures!</h1>
+                </div>
                 <LoginForm history={this.props.history} />
             </>
         )
