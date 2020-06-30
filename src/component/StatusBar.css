@@ -4,12 +4,35 @@
     width: 100%;
     top: 85vh;
     left: 0;
-    background-color: aqua;
 }
 
 .status-bar__portrait {
     float: left;
     width: 15vh;
     height: 15vh;
+    background-color: grey;
+}
+
+.status-bar__bar-box {
+    position: relative;
+    top: 1em;
+    width: 100%;
+    background-color: lightblue;
+    display: flex;
+    flex-flow: column nowrap;
+    border-top: 2px grey solid;
+    padding: .5em 0;
+}
+
+.status-bar__bar-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    padding-left: 1em;
+}
+
+.status-bar__bar-background {
+    width: 80%;
+    height: .5em;
     background-color: grey;
 }

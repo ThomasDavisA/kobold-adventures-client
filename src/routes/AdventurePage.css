@@ -48,3 +48,19 @@
     margin-top: 1em;
     border-radius: 1em;
 }
+
+.adventure-bar__background {
+    width: 80vw;
+    margin: .5em 0;
+    height: 1em;
+    border-radius: 1em;
+    background-color: grey;
+}
+
+.adventure-bar__progress {
+    width: 0%;
+    height: 1em;
+    border-radius: 1em;
+    background-color: darkgreen;
+    transition: .5s ease-in-out;
+}

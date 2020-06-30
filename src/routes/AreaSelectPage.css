@@ -1,6 +1,16 @@
 .location-box, .location-select-box {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-evenly;
     background-color: aliceblue;
     margin: 1em .5em 1em .5em;
     padding: 1em;
     border-radius: 1em;
+}
+
+.location-button__start-adventure, .location-button__go-back {
+    width: 40%;
+    margin: 1em .5em;
+    padding: .5em;
 }

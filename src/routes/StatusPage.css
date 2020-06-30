@@ -4,7 +4,7 @@
     flex-flow: column nowrap;
     justify-content: space-around;
     background-color: aliceblue;
-    padding: 1em;
+    padding: .75em;
 }
 
 .level-box {
@@ -17,6 +17,7 @@
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
+    padding: .25em;
     border: 2px white solid;
     border-radius: 1em;
 }
@@ -24,6 +25,10 @@
 .stats-box {
     display: flex;
     flex-flow: column nowrap;
+    background-color: lightskyblue;
+    padding: .5em 0;
+    border: .25em blue solid;
+    border-radius: .5em;
 }
 
 .stats-box__assignment {

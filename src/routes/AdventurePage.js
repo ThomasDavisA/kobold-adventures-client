@@ -20,6 +20,22 @@ export default class AdventurePage extends Component {
 
     }
 
+    renderProgress = () => {
+
+        const barFill = {
+            width: `${this.context.adventure_progress}%`
+        }
+
+        return (
+            <div className='adventure-box__header'>
+                <div className='adventure-bar__background'>
+                    <div className='adventure-bar__progress' style={barFill}></div>
+                </div>
+                <h4>Progress: {this.context.adventure_progress}%</h4>
+            </div>
+        )
+    }
+
 
     renderEncounter = () => {
         return (
@@ -65,12 +81,10 @@ export default class AdventurePage extends Component {
     render() {
         return (
             <div className='div-adventure-box'>
-                <div className='adventure-box__header'>
-                    <div className="bar-background progress-background">
-                        <div className="progress-complete"></div>
-                    </div>
-                    <h4>Progress: {this.context.adventure_progress}%</h4>
-                </div>
+
+                {this.context.adventure &&
+                    this.renderProgress()}
+
                 {this.context.adventure.encounter &&
                     this.renderEncounter()}
 

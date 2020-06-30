@@ -2,19 +2,23 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-evenly;
-    height: 60vh;
-    padding: 2em 0;
+    height: 40vh;
     margin: 1em;
+    padding: .5em 1em;
     line-height: 1.4em;
     background-color: aliceblue;
     border-radius: 1em;
 }
 
 .form__container {
-
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .form__label {
+    line-height: 1.4em;
 }
 
 .form__input {

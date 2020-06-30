@@ -2,18 +2,26 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-evenly;
-    align-items: center;
     height: 60vh;
-    padding: 2em 0;
-    margin: 1em;
+    padding: .5em 1em;
+    margin: 10vh 1em;
     line-height: 1.4em;
     background-color: aliceblue;
     border-radius: 1em;
 }
 
+.RegistrationForm__username {
+    line-height: 1.4em;
+}
+
+.RegistrationForm__password {
+    line-height: 1.4em;
+}
+
 .form__alert {
     background-color: white;
     width: 80%;
+    margin: 1em auto;
     padding: .25em;
     border-radius: .5em;
 }
@@ -23,10 +31,10 @@
 }
 
 .form__container {
-    width: 100%;
-}
-
-.form__label {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .form__input {

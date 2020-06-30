@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import TokenService from '../services/token-service';
 import KoboldsContext from '../context/KoboldContext';
 import AuthApiService from '../services/auth-api-service';
@@ -44,24 +43,30 @@ export default class LoginForm extends Component {
 
     }
 
+    onRegister = () => {
+        this.props.history.push('/register')
+    }
+
     render() {
         return (
             <>
-            {this.state.error && 
-            <h3>{this.state.error}</h3>}
-            <form className='form' onSubmit={this.handleSubmit}>
-                <div className='form__container'>
-                    <label classanme='form__label' htmlFor='username'>Username</label>
-                    <input className='form__input' name='username' type='text' ></input>
+                <form className='form' onSubmit={this.handleSubmit}>
+                    <div className='form__container'>
+                        <label classanme='form__label' htmlFor='username'>Username</label>
+                        <input className='form__input' name='username' type='text' ></input>
+                    </div>
+                    <div className='form__container'>
+                        <label classanme='form__label' htmlFor='password'>Password</label>
+                        <input className='form__input' name='password' type='password' ></input>
+                    </div>
+                    <div className="form__container">
+                        <button className='form__button' type='submit'>Login</button>
+                        <button type='button' className='form__button' onClick={() => this.onRegister()}>Register</button>
+                    </div>
+                </form>
 
-                    <label classanme='form__label' htmlFor='password'>Password</label>
-                    <input className='form__input' name='password' type='password' ></input>
-                </div>
-                <div className="form__container">
-                    <button className='form__button' type='submit'>Login</button>
-                    <Link to='/register'><button className='form__button'>Register</button></Link>
-                </div>
-            </form>
+                {this.state.error &&
+                    <h4>{this.state.error}</h4>}
             </>
         )
     }
