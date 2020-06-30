@@ -1,0 +1,57 @@
+.status-box {
+    display: flex;
+    height: 80vh;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    background-color: aliceblue;
+    padding: 1em;
+}
+
+.level-box {
+    border: 2px white solid;
+    border-radius: 1em;
+}
+
+.currency-box {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px white solid;
+    border-radius: 1em;
+}
+
+.stats-box {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.stats-box__assignment {
+    display: grid;
+    align-items: center;
+    padding: 10px;
+    grid-template-columns: auto 25px 25px auto 25px 25px;
+    grid-template-rows: 25px 25px 25px;
+    row-gap: .5em;
+}
+
+.stats-box__button {
+    column-gap: .5em;
+    margin: 0 4px;
+    border: 1px grey solid;
+    border-radius: 50%;
+}
+
+.stats-box__button--increment {
+
+}
+
+.stats-box__button--decrement {
+    
+}
+
+.button {
+    width: 80%;
+    padding: 1em 0;
+    margin: .5em;
+}

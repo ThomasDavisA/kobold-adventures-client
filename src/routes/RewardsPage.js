@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import KoboldsContext from '../context/KoboldContext';
-import StatusBar from '../component/StatusBar';
 import KoboldsApiService from '../services/kobolds-api-service';
+
+import './RewardsPage.css';
 
 export default class RewardsPage extends Component {
     static contextType = KoboldsContext;
@@ -13,42 +14,52 @@ export default class RewardsPage extends Component {
     }
 
     componentDidMount = () => {
-        KoboldsApiService.getRewards(this.context.kobold.kobold_id)
-            .then(rewards => {
-                this.setState({
-                    rewards,
-                    levelUp: rewards.levelUp
-                });
+        KoboldsApiService.getKoboldByToken()
+            .then(kobold => {
+                this.context.setKobold(kobold);
+                KoboldsApiService.getRewards(this.context.kobold.kobold_id)
+                    .then(rewards => {
+                        this.setState({
+                            rewards,
+                            levelUp: rewards.levelUp
+                        });
+                    });
             });
+
     }
 
     render() {
-        console.log(this.state)
         return (
             <>
                 {this.state.rewards &&
-                    <div className="adventure-box">
-                        <div className="bar-background progress-background"><div className="progress-complete finished"></div></div>
-                        <h2>Adventure Complete!</h2>
+                    <div className="div__rewards-box">
+                        <div className='rewards-box__header'>
+                            <div className="bar-background progress-background"><div className="progress-complete finished"></div></div>
+                            <h2>Adventure Complete!</h2>
+                        </div>
 
                         <p>Kobold XP: {this.state.rewards.xp}</p>
-                        <h4>Treasure:
-                                    <ul>
+                        <h4 className='rewards-box__treasure'>Treasure:
+                            <ul className='rewards-box__list'>
                                 <li>Wooden Nickels: {this.state.rewards.nickles}</li>
                                 <li>Equipment Scraps: {this.state.rewards.scrap}</li>
                                 <li>Dragon Influence: {this.state.rewards.influence}</li>
                             </ul>
                         </h4>
+
+                        {this.state.levelUp &&
+                            <div className='div__levelup-box'>
+                                <h3>Level Up!</h3>
+                                <h4>You gain 3 status points!</h4>
+                                <p>Use them in the status menu.</p>
+                            </div>}
+
+                        <Link to='/main'>
+                            <button className='rewards-box__button'>Hooray!  End your Adventure.</button>
+                        </Link>
                     </div>}
-                {this.state.levelUp &&
-                    <div className='adventure-box'>
-                        <h3>Level Up!</h3>
-                        <h4>You gain 3 status points!</h4>
-                        <p>Use them in the status menu.</p>
-                    </div>}
-                <Link to='/main'>
-                    <button>Hooray!  End your Adventure.</button>
-                </Link>
+
+
             </>
         )
     }

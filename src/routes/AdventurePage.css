@@ -1,0 +1,50 @@
+.div-adventure-box {
+    display: flex;
+    justify-content: space-between;
+    height: 85vh;
+    align-items: center;
+    flex-flow: column nowrap;
+    background-color: aliceblue;
+}
+
+.adventure-box__header {
+    margin: .5em 0;
+    padding: .5em 0;
+}
+
+.adventure-box__encounter {
+    width: 80%;
+    border: 2px red solid;
+    border-radius: 1em;
+    padding: 1.5em .25em;
+}
+
+.button-box {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+    margin: .5em 0;
+    border: 3px grey solid;
+    border-radius: 1em;
+    padding: 10px 0;
+    grid-template-columns: 40% 40%;
+    grid-template-rows: 40% 40%;
+    row-gap: .5em;
+    column-gap: .5em;
+}
+
+.results-box {
+    width: 90vw;
+    margin: .5em 0;
+    border: 3px blue solid;
+    border-radius: 1em;
+    padding: 1em .25em;
+}
+
+.results-box__button {
+    width: 80%;
+    height: 2.5em;
+    margin-top: 1em;
+    border-radius: 1em;
+}

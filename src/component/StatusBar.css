@@ -1,0 +1,15 @@
+.status-bar {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    top: 85vh;
+    left: 0;
+    background-color: aqua;
+}
+
+.status-bar__portrait {
+    float: left;
+    width: 15vh;
+    height: 15vh;
+    background-color: grey;
+}

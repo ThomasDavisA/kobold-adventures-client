@@ -1,0 +1,6 @@
+.location-box, .location-select-box {
+    background-color: aliceblue;
+    margin: 1em .5em 1em .5em;
+    padding: 1em;
+    border-radius: 1em;
+}

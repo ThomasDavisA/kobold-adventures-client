@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import TokenService from '../services/token-service';
+import KoboldsApiService from '../services/kobolds-api-service';
+import KoboldsContext from '../context/KoboldContext';
 
 import './NewsPage.css';
 
 
 export default class NewsPage extends Component {
+    static contextType = KoboldsContext;
 
+    componentDidMount = () => {
+        KoboldsApiService.getKoboldByToken()
+            .then(kobold => {
+                this.context.setKobold(kobold);
+            });
+    }
+
+    
     handleLogout = () => {
         TokenService.clearAuthToken()
     }
@@ -20,9 +31,9 @@ export default class NewsPage extends Component {
                 </div>
 
                 <div className='container__buttons'>
-                    <Link to='/main/areaselect'><button className='adv-button'>Go Adventuring!</button></Link>
-                    <Link to='/main/status'><button>Kobold Status</button></Link>
-                    <Link to='/'><button onClick={() => this.handleLogout()}>Logout</button></Link>
+                    <Link to='/main/areaselect'><button className='button'>Go Adventuring!</button></Link>
+                    <Link to='/main/status'><button className='button'>Kobold Status</button></Link>
+                    <Link to='/'><button className='button' onClick={() => this.handleLogout()}>Logout</button></Link>
                 </div>
             </>
         )

@@ -1,0 +1,45 @@
+.div__rewards-box {
+    display: flex;
+    justify-content: space-between;
+    height: 85vh;
+    align-items: center;
+    flex-flow: column nowrap;
+    background-color: aliceblue;
+}
+
+.rewards-box__header {
+    margin: .5em 0;
+}
+
+.rewards-box__treasure {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    padding: 2em;
+    line-height: 1.4em;
+    border: 5px gold solid;
+    background-color: goldenrod;
+    border-radius: .5em;
+}
+
+.div__levelup-box {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    line-height: 1.4em;
+    border: 5px greenyellow solid;
+    border-radius: .5em;
+    padding: 1.5em;
+    background-color: green;
+}
+
+.rewards-box__list {
+    list-style-type: none;
+}   
+
+.rewards-box__button {
+    margin: 1em 0;
+    padding: 1em 2em;
+    border: 1px grey solid;
+    border-radius: .5em;
+}

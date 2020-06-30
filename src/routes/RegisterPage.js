@@ -35,8 +35,8 @@ export default class RegisterPage extends Component {
                         TokenService.saveAuthToken(res.authToken)
                         KoboldApiSerivce.postKobold(user.user_name)
                             .then(res => {
-                                console.log(res)
-                                this.context.setKobold(res[0])
+                                //console.log(res)
+                                //this.context.setKobold(res[0])
                                 this.props.history.push(`/main`)
                             })
 

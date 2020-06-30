@@ -14,7 +14,7 @@ const KoboldsApiService = {
             })
     },
     getKoboldByToken() {
-        return fetch(`${config.API_ENDPOINT}/kobold/login`, {
+        return fetch(`${config.API_ENDPOINT}/kobold`, {
             headers: {
                 'content-type': 'application/json',
                 'authorization': `bearer ${TokenService.getAuthToken()}`

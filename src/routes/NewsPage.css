@@ -1,12 +1,12 @@
 .container__news {
     background-color: aliceblue;
-    margin: 5vh .5em 1em .5em;
+    margin: 1em .5em 1em .5em;
     padding: 1em;
     border-radius: 1em;
 }
 
 .news__header {
-    margin: 1em 0;
+    margin: .5em 0;
 }
 
 .news__text {
@@ -16,5 +16,13 @@
 }
 
 .container__buttons {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+}
 
+.button {
+    width: 80%;
+    padding: 1em 0;
+    margin: .5em;
 }

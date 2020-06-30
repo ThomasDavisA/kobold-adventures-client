@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import StatusBar from '../component/StatusBar';
 import KoboldsContext from '../context/KoboldContext';
 import KoboldsApiService from '../services/kobolds-api-service';
+
+import './StatusPage.css';
 
 export default class StatusPage extends Component {
     static contextType = KoboldsContext;
@@ -18,7 +19,7 @@ export default class StatusPage extends Component {
     }
 
     componentDidMount = () => {
-        KoboldsApiService.getKobold(this.context.kobold.kobold_id)
+        KoboldsApiService.getKoboldByToken()
             .then(kobold => {
                 this.context.setKobold(kobold);
                 this.setState ({
@@ -76,17 +77,15 @@ export default class StatusPage extends Component {
     render() {
         return (
             <>
-                <h2>Status!</h2>
                 {this.state.rendered &&
-                    <>
+                    <div className='status-box'>
                         <h2>{this.context.kobold.kobold_name}</h2>
                         <div className="level-box">
-                            <h3>Kobold Level: {this.context.kobold.kobold_level}</h3>
-                            <h4>Koobld XP:{this.context.kobold.kobold_xp}</h4>
+                            <h3>Level: {this.context.kobold.kobold_level}</h3>
+                            <h4>XP:{this.context.kobold.kobold_xp}</h4>
                         </div>
 
                         <div className='currency-box'>
-                            <h4>Currencies:</h4>
                             <h5>Nickels: {this.context.kobold.currency_wood_nickels}</h5>
                             <h5>Scraps: {this.context.kobold.currency_equipment_scraps}</h5>
                             <h5>Influence: {this.context.kobold.currency_dragon_influence}</h5>
@@ -94,20 +93,20 @@ export default class StatusPage extends Component {
 
                         <div className="stats-box">
                             <h3>Stats</h3>
-                            <div className="stats-total">
-                                <h4>Unspent Points: {this.state.unspent}</h4>
-                                <h4>Muscle: {this.state.muscle}</h4> <button onClick={() => this.increaseStat('muscle')}>+</button><button onClick={() => this.decreaseStat('muscle')}>-</button>
-                                <h4>Fitness: {this.state.fitness}</h4> <button onClick={() => this.increaseStat('fitness')}>+</button><button onClick={() => this.decreaseStat('fitness')}>-</button>
-                                <h4>Eloquence: {this.state.eloquence}</h4> <button onClick={() => this.increaseStat('eloquence')}>+</button><button onClick={() => this.decreaseStat('eloquence')}>-</button>
-                                <h4>Intellect: {this.state.intellect}</h4> <button onClick={() => this.increaseStat('intellect')}>+</button><button onClick={() => this.decreaseStat('intellect')}>-</button>
-                                <h4>Mana: {this.state.mana}</h4> <button onClick={() => this.increaseStat('mana')}>+</button><button onClick={() => this.decreaseStat('mana')}>-</button>
+                            <h4>Unspent Points: {this.state.unspent}</h4>
+                            <div className="stats-box__assignment">
+                                <h5>Muscle: {this.state.muscle}</h5> <button className='stats-box__button stats-box__button--increment' onClick={() => this.increaseStat('muscle')}>+</button><button className='stats-box__button stats-box__button--decrement' onClick={() => this.decreaseStat('muscle')}>-</button>
+                                <h5>Fitness: {this.state.fitness}</h5> <button className='stats-box__button stats-box__button--increment' onClick={() => this.increaseStat('fitness')}>+</button><button className='stats-box__button stats-box__button--decrement' onClick={() => this.decreaseStat('fitness')}>-</button>
+                                <h5>Eloquence: {this.state.eloquence}</h5> <button className='stats-box__button stats-box__button--increment' onClick={() => this.increaseStat('eloquence')}>+</button><button className='stats-box__button stats-box__button--decrement' onClick={() => this.decreaseStat('eloquence')}>-</button>
+                                <h5>Intellect: {this.state.intellect}</h5> <button className='stats-box__button stats-box__button--increment' onClick={() => this.increaseStat('intellect')}>+</button><button className='stats-box__button stats-box__button--decrement' onClick={() => this.decreaseStat('intellect')}>-</button>
+                                <h5>Mana: {this.state.mana}</h5> <button className='stats-box__button stats-box__button--increment' onClick={() => this.increaseStat('mana')}>+</button><button className='stats-box__button stats-box__button--decrement' onClick={() => this.decreaseStat('mana')}>-</button>
                             </div>
                         </div>
 
                         <div className="adventure-box">
-                            <button onClick={() => this.finalizeStatus()}>Return</button>
+                            <button className='button' onClick={() => this.finalizeStatus()}>Return</button>
                         </div>
-                    </>
+                    </div>
                 }
 
             </>

@@ -5,6 +5,8 @@ import LocationsService from '../services/locations-api-service';
 import KoboldsContext from '../context/KoboldContext';
 import KoboldsApiService from '../services/kobolds-api-service';
 
+import './AreaSelectPage.css';
+
 export default class AreaSelectPage extends Component {
     static contextType = KoboldsContext;
 
@@ -27,13 +29,15 @@ export default class AreaSelectPage extends Component {
     render() {
         return (
             <>
-                <div className="news-box">
+                <div className="location-box">
                     <h3>Adventure!</h3>
                 </div>
 
-              
-                <button value='1' onClick={() => this.handleClick(1)}>The Lake</button>
-                <button onClick={() => this.props.history.goBack()}>Go back</button>
+
+                <div className='location-select-box'>
+                    <button value='1' onClick={() => this.handleClick(1)}>The Lake</button>
+                    <button onClick={() => this.props.history.goBack()}>Go back</button>
+                </div>
 
 
                 <StatusBar />

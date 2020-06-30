@@ -4,15 +4,30 @@ import ResolutionButton from '../component/ResolutionButton';
 import LocationsService from '../services/locations-api-service';
 import KoboldsApiService from '../services/kobolds-api-service';
 
+import './AdventurePage.css';
+
 export default class AdventurePage extends Component {
     static contextType = KoboldsContext;
 
+    componentDidMount = () => {
+        KoboldsApiService.getKoboldByToken()
+            .then(kobold => {
+                this.context.setKobold(kobold);
+                if (!this.context.adventure.encounter) {
+                    this.props.history.push('/main');
+                }
+            });
+
+    }
+
+
     renderEncounter = () => {
         return (
-            <>
+            <div className='adventure-box__encounter'>
+                <h3>Event!</h3>
                 <h4>{this.context.adventure.encounter.encounter_name}</h4>
                 <p>{this.context.adventure.encounter.encounter_text}</p>
-            </>
+            </div>
         )
     }
 
@@ -49,32 +64,32 @@ export default class AdventurePage extends Component {
 
     render() {
         return (
-            <>
-                <div className="bar-background progress-background">
-                    <div className="progress-complete"></div>
+            <div className='div-adventure-box'>
+                <div className='adventure-box__header'>
+                    <div className="bar-background progress-background">
+                        <div className="progress-complete"></div>
+                    </div>
+                    <h4>Progress: {this.context.adventure_progress}%</h4>
                 </div>
-                <h4>Progress: {this.context.adventure_progress}%</h4>
-
-                <h3>Event!</h3>
                 {this.context.adventure.encounter &&
-                this.renderEncounter()}
+                    this.renderEncounter()}
 
                 {!this.context.resolve.resolveFlag &&
                     <div className="button-box">
                         {this.context.adventure.encounter &&
-                        this.renderResolutions()}
+                            this.renderResolutions()}
                     </div>
                 }
 
-                <div className="results-box">
-                    {this.context.resolve.resolveFlag &&
-                        <>
-                            <h5>{this.context.resolve.resolveSuccess}</h5>
-                            <p>{this.context.resolve.resolveMessage}</p>
-                            <button onClick={() => this.continueAdventure()}>Continue</button>
-                        </>}
-                </div>
-            </>
+
+                {this.context.resolve.resolveFlag &&
+                    <div className="results-box">
+                        <h5>{this.context.resolve.resolveSuccess}</h5>
+                        <p>{this.context.resolve.resolveMessage}</p>
+                        <button className='results-box__button' onClick={() => this.continueAdventure()}>Continue</button>
+                    </div>}
+
+            </div>
         )
     }
 }

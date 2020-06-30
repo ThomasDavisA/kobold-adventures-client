@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import KoboldsContext from '../context/KoboldContext';
 
+import './StatusBar.css';
+
 export default class StatusBar extends Component {
     static contextType = KoboldsContext;
 
     render() {
         return (
             <>
-                <div className="character-bar">
-                    <canvas className="kobold-portrait"></canvas>
+                <div className="status-bar">
+                    <canvas className="status-bar__portrait"></canvas>
                     <div className="bar-box">
                         <div className="bar-container">
                             <h3>Life: <span>{this.context.kobold.kobold_health}</span></h3>
