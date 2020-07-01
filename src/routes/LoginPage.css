@@ -4,3 +4,11 @@
     background-color: aliceblue;
     border-radius: .5em;
 }
+
+.error-container {
+    border: 2px #FFA590 solid;
+    background-color: #FFC3B4;
+    margin: 2em 1em 0 1em;
+    padding: 2em;
+    border-radius: 1em;
+}

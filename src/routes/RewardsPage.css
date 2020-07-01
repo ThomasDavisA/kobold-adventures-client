@@ -17,8 +17,8 @@
     justify-content: space-between;
     padding: 2em;
     line-height: 1.4em;
-    border: 5px gold solid;
-    background-color: goldenrod;
+    border: 5px #6DC18F solid;
+    background-color: #9CDDB6;
     border-radius: .5em;
 }
 
@@ -27,19 +27,29 @@
     flex-flow: column nowrap;
     justify-content: space-evenly;
     line-height: 1.4em;
-    border: 5px greenyellow solid;
+    border: 5px #6DC18F solid;
     border-radius: .5em;
     padding: 1.5em;
-    background-color: green;
+    background-color: #9CDDB6;
 }
 
 .rewards-box__list {
     list-style-type: none;
-}   
+}
+
+li {
+    display: flex;
+    align-items: center;
+    padding: .25em 0;
+}
 
 .rewards-box__button {
     margin: 1em 0;
     padding: 1em 2em;
     border: 1px grey solid;
     border-radius: .5em;
+}
+
+.rewards-box__currency-icons {
+
 }

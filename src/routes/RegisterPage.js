@@ -83,7 +83,7 @@ export default class RegisterPage extends Component {
 
                 {error &&
                     <div className='form__alert' role='alert'>
-                        <p className='form__alert--red'>{error}</p>
+                        <h4 className='form__alert--red'>{error}</h4>
                     </div>}
             </>
         )

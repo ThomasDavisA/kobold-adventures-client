@@ -1,9 +1,11 @@
 .button__resolution {
     height: 2em;
-    border: 2px white solid;
+    border: 2px #6598AD solid;
     border-radius: 1em;
+    background-color: #97C1D2;
+    transition: .2s ease;
 }
 
 .button__resolution--active:active {
-    background-color: green
+    background-color: #6DC18F;
 }

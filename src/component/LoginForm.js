@@ -66,7 +66,9 @@ export default class LoginForm extends Component {
                 </form>
 
                 {this.state.error &&
-                    <h4>{this.state.error}</h4>}
+                    <div className='error-container'>
+                        <h4>{this.state.error}</h4>
+                    </div>}
             </>
         )
     }

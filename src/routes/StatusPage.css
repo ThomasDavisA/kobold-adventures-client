@@ -3,13 +3,16 @@
     height: 80vh;
     flex-flow: column nowrap;
     justify-content: space-around;
-    background-color: aliceblue;
+    background-color: #ECF6FB;
     padding: .75em;
+    animation: slidein-status 3s;
 }
 
 .level-box {
-    border: 2px white solid;
+    border: 2px #6598AD solid;
     border-radius: 1em;
+    background-color: #C6E0EC;
+
 }
 
 .currency-box {
@@ -18,16 +21,17 @@
     justify-content: space-between;
     align-items: center;
     padding: .25em;
-    border: 2px white solid;
+    border: 2px #6598AD solid;
     border-radius: 1em;
+    background-color: #C6E0EC;
 }
 
 .stats-box {
     display: flex;
     flex-flow: column nowrap;
-    background-color: lightskyblue;
+    background-color: #CCD1EF;
     padding: .5em 0;
-    border: .25em blue solid;
+    border: .25em #737DBA solid;
     border-radius: .5em;
 }
 
@@ -42,21 +46,31 @@
 
 .stats-box__button {
     column-gap: .5em;
-    margin: 0 4px;
-    border: 1px grey solid;
+    height: 75%;
+    width: 75%;
+    margin: 0 .25em;
+    border: 1px #ECF6FB solid;
     border-radius: 50%;
+    transition: .1s ease;
 }
 
-.stats-box__button--increment {
-
+.stats-box__button--increment:active {
+    background-color: #9CDDB6;
+    border: #6DC18F;
 }
 
-.stats-box__button--decrement {
-    
+.stats-box__button--decrement:active {
+    background-color: #FFC3B4;
+    border: #FFA590;
+
 }
 
 .button {
     width: 80%;
     padding: 1em 0;
     margin: .5em;
+}
+
+.currency__icon {
+    height: 2em;
 }

@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Nickels from '../svg/two-coins.svg';
+import Scrap from '../svg/swap-bag.svg';
+import Influence from '../svg/spiked-dragon-head.svg';
 import KoboldsContext from '../context/KoboldContext';
 import KoboldsApiService from '../services/kobolds-api-service';
 
@@ -22,7 +25,7 @@ export default class StatusPage extends Component {
         KoboldsApiService.getKoboldByToken()
             .then(kobold => {
                 this.context.setKobold(kobold);
-                this.setState ({
+                this.setState({
                     rendered: true,
                     unspent: kobold.kobold_unspent_points,
                     muscle: kobold.kobold_muscle,
@@ -35,7 +38,7 @@ export default class StatusPage extends Component {
     }
 
     increaseStat = (str) => {
-        if(this.state.unspent === 0 || !this.state.unspent) {
+        if (this.state.unspent === 0 || !this.state.unspent) {
             return;
         }
 
@@ -50,10 +53,10 @@ export default class StatusPage extends Component {
     }
 
     decreaseStat = (str) => {
-        if(this.state[str] === 0) {
+        if (this.state[str] === 0) {
             return;
         }
-        
+
 
         const statDecrease = this.state[str] - 1
         const stats = {
@@ -86,9 +89,9 @@ export default class StatusPage extends Component {
                         </div>
 
                         <div className='currency-box'>
-                            <h5>Nickels: {this.context.kobold.currency_wood_nickels}</h5>
-                            <h5>Scraps: {this.context.kobold.currency_equipment_scraps}</h5>
-                            <h5>Influence: {this.context.kobold.currency_dragon_influence}</h5>
+                            <h5>Nickels: {this.context.kobold.currency_wood_nickels} </h5><img className='currency__icon' alt='' src={Nickels} />
+                            <h5>Scraps: {this.context.kobold.currency_equipment_scraps} </h5><img className='currency__icon' alt='' src={Scrap} />
+                            <h5>Influence: {this.context.kobold.currency_dragon_influence}</h5> <img className='currency__icon' alt='' src={Influence} />
                         </div>
 
                         <div className="stats-box">

@@ -4,6 +4,9 @@ import ResolutionButton from '../component/ResolutionButton';
 import LocationsService from '../services/locations-api-service';
 import KoboldsApiService from '../services/kobolds-api-service';
 
+import Moon from '../svg/moon.svg';
+import Sun from '../svg/sun.svg';
+
 import './AdventurePage.css';
 
 export default class AdventurePage extends Component {
@@ -28,8 +31,12 @@ export default class AdventurePage extends Component {
 
         return (
             <div className='adventure-box__header'>
-                <div className='adventure-bar__background'>
-                    <div className='adventure-bar__progress' style={barFill}></div>
+                <div className='adventure-bar'>
+                    <img className='adventure-bar__Sun adventure-bar__Sun--animate' src={Sun} alt='' />
+                    <div className='adventure-bar__background'>
+                        <div className='adventure-bar__progress' style={barFill}></div>
+                    </div>
+                    <img className='adventure-bar__Moon adventure-bar__Moon--animate' src={Moon} alt='' />
                 </div>
                 <h4>Progress: {this.context.adventure_progress}%</h4>
             </div>

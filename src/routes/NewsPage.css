@@ -1,5 +1,5 @@
 .container__news {
-    background-color: aliceblue;
+    background-color: #ECF6FB;
     margin: 1em .5em 1em .5em;
     padding: 1em;
     border-radius: 1em;
@@ -10,7 +10,7 @@
 }
 
 .news__text {
-    border: 3px white solid;
+    border: 3px #97c1d2 solid;
     border-radius: 1em;
     padding: 1em;
 }

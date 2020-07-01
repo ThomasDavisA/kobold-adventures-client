@@ -4,17 +4,28 @@
     height: 85vh;
     align-items: center;
     flex-flow: column nowrap;
-    background-color: aliceblue;
+    background-color: #ECF6FB;
 }
 
 .adventure-box__header {
+    display: flex;
+    flex-flow: column nowrap;
     margin: .5em 0;
     padding: .5em 0;
 }
 
+.adventure-bar {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+}
+
 .adventure-box__encounter {
     width: 80%;
-    border: 2px red solid;
+    background-color: #EEF0FC;
+    border: 2px #A2A9D9 solid;
     border-radius: 1em;
     padding: 1.5em .25em;
 }
@@ -25,21 +36,25 @@
     justify-content: center;
     width: 90vw;
     margin: .5em 0;
-    border: 3px grey solid;
-    border-radius: 1em;
     padding: 10px 0;
+    border: 3px #A2A9D9 solid;
+    border-radius: 1em;
+    background-color: #EEF0FC;
     grid-template-columns: 40% 40%;
     grid-template-rows: 40% 40%;
     row-gap: .5em;
     column-gap: .5em;
+    transition: .2 ease;
 }
 
 .results-box {
     width: 90vw;
     margin: .5em 0;
-    border: 3px blue solid;
+    background-color: #EEF0FC;
+    border: 3px #A2A9D9 solid;
     border-radius: 1em;
     padding: 1em .25em;
+    transition: .2 ease;
 }
 
 .results-box__button {
@@ -50,7 +65,7 @@
 }
 
 .adventure-bar__background {
-    width: 80vw;
+    width: 55vw;
     margin: .5em 0;
     height: 1em;
     border-radius: 1em;
@@ -61,6 +76,17 @@
     width: 0%;
     height: 1em;
     border-radius: 1em;
-    background-color: darkgreen;
+    background-color: #6DC18F;
     transition: .5s ease-in-out;
+}
+
+.adventure-bar__Sun {
+    height: 3em;
+    margin-right: 1em;
+}
+
+
+.adventure-bar__Moon {
+    height: 3em;
+    margin-left: 1em;
 }

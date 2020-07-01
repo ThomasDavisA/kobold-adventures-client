@@ -7,7 +7,7 @@
 }
 
 .location-button--expanded {
-    background-color: darkgray;
+    background-color: #CCD1EF;
     border-radius: 1em;
     padding: .5em;
     margin: .5em 0;
@@ -15,7 +15,7 @@
 }
 
 .location-button__description {
-    background-color: lightgrey;
+    background-color: #A2A9D9;
     border-radius: 1em;
 }
 

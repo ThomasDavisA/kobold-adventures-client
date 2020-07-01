@@ -7,20 +7,22 @@
 }
 
 .status-bar__portrait {
+    position: absolute;
+    z-index: 1;
     float: left;
     width: 15vh;
     height: 15vh;
-    background-color: grey;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .status-bar__bar-box {
     position: relative;
-    top: 1em;
+    top: 2em;
     width: 100%;
-    background-color: lightblue;
+    background-color: #C8F0D8;
     display: flex;
     flex-flow: column nowrap;
-    border-top: 2px grey solid;
+    border-top: 2px #ECFCF3 solid;
     padding: .5em 0;
 }
 
@@ -28,7 +30,7 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-start;
-    padding-left: 1em;
+    padding-left: 7em;
 }
 
 .status-bar__bar-background {
