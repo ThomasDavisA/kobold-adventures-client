@@ -14,6 +14,7 @@ import RegisterPage from './routes/RegisterPage';
 import { KoboldContextProvider } from './context/KoboldContext';
 
 function App() {
+  console.log(process.env.API_ENDPOINT, process.env.JWT_TOKEN)
   return (
     <div className="App">
       <KoboldContextProvider>
