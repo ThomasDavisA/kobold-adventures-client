@@ -1,4 +1,4 @@
 export default {
-    API_ENDPOINT: 'http://localhost:8000/api',
-    TOKEN_KEY: 'jwt-secret-token',
+    API_ENDPOINT: process.env.API_ENDPOINT,
+    TOKEN_KEY: process.env.JWT_TOKEN,
 }
