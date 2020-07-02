@@ -1,5 +1,7 @@
 .button__resolution {
-    height: 2em;
+    min-height: 4em;
+    padding: .5em;
+    margin: .25em;
     border: 2px #6598AD solid;
     border-radius: 1em;
     background-color: #97C1D2;

@@ -47,9 +47,9 @@ export default class AdventurePage extends Component {
     renderEncounter = () => {
         return (
             <div className='adventure-box__encounter'>
-                <h3>Event!</h3>
-                <h4>{this.context.adventure.encounter.encounter_name}</h4>
-                <p>{this.context.adventure.encounter.encounter_text}</p>
+                <h3 className='adventure-box__event'>Event!</h3>
+                <h4 className='adventure-box__event-header'>{this.context.adventure.encounter.encounter_name}</h4>
+                <p className='adventure-box__event-text'>{this.context.adventure.encounter.encounter_text}</p>
             </div>
         )
     }

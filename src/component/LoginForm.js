@@ -27,12 +27,9 @@ export default class LoginForm extends Component {
                 username.value = '';
                 password.value = '';
                 TokenService.saveAuthToken(res.authToken)
-                console.log(res.authToken)
                 KoboldsApiService.getKoboldByToken()
                     .then(kobold => {
-                        console.log(kobold)
                         this.context.setKobold(kobold);
-                        console.log(this.context)
                         this.props.history.push(`/main`)
                     })
 

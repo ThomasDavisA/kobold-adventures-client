@@ -5,8 +5,8 @@
     justify-content: space-evenly;
     background-color: #ECF6FB;
     margin: 1em .5em 1em .5em;
-    padding: 1em;
-    border-radius: 1em;
+    padding: .75em .5em;
+    border-radius: .5em;
 }
 
 .location-button__start-adventure, .location-button__go-back {

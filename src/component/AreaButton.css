@@ -1,6 +1,6 @@
 .location-button {
-    width: 80%;
-    margin: .25em 0;
+    width: 100%;
+    margin: .5em 0;
     padding: .5em;
     border: 1px grey solid;
     border-radius: .5em;
@@ -10,13 +10,15 @@
     background-color: #CCD1EF;
     border-radius: 1em;
     padding: .5em;
-    margin: .5em 0;
+    margin: .25em 0;
     line-height: 1.4em;
 }
 
 .location-button__description {
     background-color: #A2A9D9;
     border-radius: 1em;
+    padding: .5em;
+    margin-bottom: .5em;
 }
 
 .location-button__level-requirement {

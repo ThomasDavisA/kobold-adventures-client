@@ -48,7 +48,6 @@ export default class StatusPage extends Component {
             unspent: this.state.unspent - 1,
         }
         stats[str] = statIncrease;
-        console.log(stats)
         this.setState(stats)
     }
 
@@ -64,7 +63,6 @@ export default class StatusPage extends Component {
             unspent: this.state.unspent + 1,
         }
         stats[str] = statDecrease;
-        console.log(stats)
         this.setState(stats)
 
     }

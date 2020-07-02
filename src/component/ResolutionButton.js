@@ -10,7 +10,6 @@ export default class ResolutionButton extends Component {
     handleClick = (id) => {
         KoboldsApiService.getEncounterOutcome(id, this.context.kobold.kobold_id)
             .then(resolve => {
-                console.log(resolve)
                 this.context.resolveAction(resolve)
             })
         

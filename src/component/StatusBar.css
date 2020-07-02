@@ -2,6 +2,7 @@
     position: fixed;
     display: flex;
     width: 100%;
+    height: 15vh;
     top: 85vh;
     left: 0;
 }
@@ -17,13 +18,13 @@
 
 .status-bar__bar-box {
     position: relative;
-    top: 2em;
+    top: 1.5em;
     width: 100%;
     background-color: #C8F0D8;
     display: flex;
     flex-flow: column nowrap;
     border-top: 2px #ECFCF3 solid;
-    padding: .5em 0;
+    padding: .5em;
 }
 
 .status-bar__bar-container {

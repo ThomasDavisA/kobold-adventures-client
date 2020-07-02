@@ -32,25 +32,18 @@ export default class AreaSelectPage extends Component {
 
     }
 
-    setLocation = event => {
-        console.log(event);
-    }
-
     //Get our Adventure and store it in state
     handleClick = (location) => {
         this.context.setLocation(location);
         LocationsService.getAdventure(location)
             .then(adventure => {
-                console.log(adventure)
                 this.context.setAdventure(adventure[0], adventure[1])
-                console.log(this.context)
                 this.props.history.push(`/main/adventure`);
             })
     }
 
     handleGo = () => {
         if (this.context.location !== null) {
-            console.log(this.context, this.context.location)
             LocationsService.getAdventure(this.context.location)
                 .then(adventure => {
                     this.context.setAdventure(adventure[0], adventure[1])

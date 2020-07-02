@@ -11,7 +11,6 @@
     display: flex;
     flex-flow: column nowrap;
     margin: .5em 0;
-    padding: .5em 0;
 }
 
 .adventure-bar {
@@ -19,41 +18,41 @@
     flex-flow: row nowrap;
     align-items: center;
     justify-content: center;
-    width: 90vw;
+    width: 95vw;
 }
 
 .adventure-box__encounter {
-    width: 80%;
+    width: 90vw;
+    line-height: 1.4em;
     background-color: #EEF0FC;
     border: 2px #A2A9D9 solid;
     border-radius: 1em;
-    padding: 1.5em .25em;
+    padding: .5em;
 }
 
 .button-box {
     display: grid;
     align-items: center;
     justify-content: center;
-    width: 90vw;
+    width: 95vw;
     margin: .5em 0;
-    padding: 10px 0;
-    border: 3px #A2A9D9 solid;
+    border: 2px #A2A9D9 solid;
     border-radius: 1em;
     background-color: #EEF0FC;
-    grid-template-columns: 40% 40%;
-    grid-template-rows: 40% 40%;
-    row-gap: .5em;
-    column-gap: .5em;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
     transition: .2 ease;
 }
 
 .results-box {
     width: 90vw;
+    line-height: 1.4em;
     margin: .5em 0;
+    margin-bottom: 15vh;
     background-color: #EEF0FC;
-    border: 3px #A2A9D9 solid;
+    border: 2px #A2A9D9 solid;
     border-radius: 1em;
-    padding: 1em .25em;
+    padding: .5em;
     transition: .2 ease;
 }
 

@@ -23,20 +23,16 @@ export default class RegisterPage extends Component {
 
         })
             .then(user => {
-                console.log(user)
                 AuthApiService.postLogin({
                     username: username.value,
                     password: password.value
                 })
                     .then(res => {
-                        console.log('success')
                         username.value = ''
                         password.value = ''
                         TokenService.saveAuthToken(res.authToken)
                         KoboldApiSerivce.postKobold(user.user_name)
                             .then(res => {
-                                //console.log(res)
-                                //this.context.setKobold(res[0])
                                 this.props.history.push(`/main`)
                             })
 
