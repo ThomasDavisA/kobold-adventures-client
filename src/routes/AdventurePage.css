@@ -22,11 +22,12 @@
 }
 
 .adventure-box__encounter {
-    width: 90vw;
+    width: 90%;
     line-height: 1.4em;
     background-color: #EEF0FC;
     border: 2px #A2A9D9 solid;
     border-radius: 1em;
+    margin: .25em;
     padding: .5em;
 }
 
@@ -45,7 +46,7 @@
 }
 
 .results-box {
-    width: 90vw;
+    width: 90%;
     line-height: 1.4em;
     margin: .5em 0;
     margin-bottom: 15vh;
@@ -73,6 +74,7 @@
 
 .adventure-bar__progress {
     width: 0%;
+    margin: 0;
     height: 1em;
     border-radius: 1em;
     background-color: #6DC18F;

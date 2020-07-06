@@ -4,12 +4,13 @@
     flex-flow: column nowrap;
     justify-content: space-around;
     background-color: #ECF6FB;
-    padding: .75em;
+    padding: .75em 0;
     animation: slidein-status 3s;
 }
 
 .level-box {
     border: 2px #6598AD solid;
+    width: 90%;
     border-radius: 1em;
     background-color: #C6E0EC;
 
@@ -20,7 +21,9 @@
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    padding: .25em;
+    width: 90%;
+    margin: 0 auto;
+    padding: 1em .25em;
     border: 2px #6598AD solid;
     border-radius: 1em;
     background-color: #C6E0EC;
@@ -30,6 +33,7 @@
     display: flex;
     flex-flow: column nowrap;
     background-color: #CCD1EF;
+    width: 90%;
     padding: .5em 0;
     border: .25em #737DBA solid;
     border-radius: .5em;
@@ -41,11 +45,11 @@
     padding: 10px;
     grid-template-columns: auto 25px 25px auto 25px 25px;
     grid-template-rows: 25px 25px 25px;
-    row-gap: .5em;
+    row-gap: .75em;
+    column-gap: .25em;
 }
 
 .stats-box__button {
-    column-gap: .5em;
     height: 75%;
     width: 75%;
     margin: 0 .25em;
@@ -68,7 +72,7 @@
 .button {
     width: 80%;
     padding: 1em 0;
-    margin: .5em;
+    margin: .5em auto;
 }
 
 .currency__icon {

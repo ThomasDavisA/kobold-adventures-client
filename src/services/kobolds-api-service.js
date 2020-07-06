@@ -2,17 +2,6 @@ import config from '../config';
 import TokenService from '../services/token-service';
 
 const KoboldsApiService = {
-    getKobold(KoboldId) {
-        return fetch(`${config.API_ENDPOINT}/kobold/${KoboldId}`, {
-            headers: {
-                'content-type': 'application/json',
-                'authorization': `bearer ${TokenService.getAuthToken()}`
-            },
-        })
-            .then(res => {
-                return res.json();
-            })
-    },
     getKoboldByToken() {
         return fetch(`${config.API_ENDPOINT}/kobold`, {
             headers: {

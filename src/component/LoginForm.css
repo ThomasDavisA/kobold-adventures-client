@@ -11,9 +11,11 @@
 }
 
 .form__container {
+    width: 100%;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
+    flex-basis: 1 2;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -22,8 +24,13 @@
 }
 
 .form__input {
+    width: 100%;
     line-height: 2em;
-    padding: 3px;
+    padding: 5px;
+    margin: 0 0 0 10%;
+    border-radius: 1em;
+    border: 1px solid #A2A9D9;
+    background-color: #EEF0FC;
 }
 
 .form__button {

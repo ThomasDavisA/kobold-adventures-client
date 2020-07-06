@@ -16,13 +16,18 @@
 }
 
 .container__buttons {
+    width: 100%;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-evenly;
 }
 
+.button-link {
+    width: 100%;
+}
+
 .button {
-    width: 80%;
+    width: 100%;
     padding: 1em 0;
     margin: .5em;
 }

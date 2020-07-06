@@ -103,10 +103,7 @@ export default class StatusPage extends Component {
                                 <h5>Mana: {this.state.mana}</h5> <button className='stats-box__button stats-box__button--increment' onClick={() => this.increaseStat('mana')}>+</button><button className='stats-box__button stats-box__button--decrement' onClick={() => this.decreaseStat('mana')}>-</button>
                             </div>
                         </div>
-
-                        <div className="adventure-box">
-                            <button className='button' onClick={() => this.finalizeStatus()}>Return</button>
-                        </div>
+                        <button className='button' onClick={() => this.finalizeStatus()}>Return</button>
                     </div>
                 }
 

@@ -11,10 +11,6 @@ export default class LoginForm extends Component {
 
     state = { error: null }
 
-    onLoginSuccess() {
-
-    }
-
     handleSubmit = event => {
         event.preventDefault();
         this.setState({ error: null });

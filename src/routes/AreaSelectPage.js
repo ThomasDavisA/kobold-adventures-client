@@ -18,6 +18,7 @@ export default class AreaSelectPage extends Component {
     componentDidMount = () => {
         LocationsService.getLocations()
             .then(locations => {
+                console.log(locations)
                 this.setState({
                     locations
                 })
@@ -30,6 +31,10 @@ export default class AreaSelectPage extends Component {
         })
         return render;
 
+    }
+
+    setLocation = event => {
+        //console.log(event);
     }
 
     //Get our Adventure and store it in state
