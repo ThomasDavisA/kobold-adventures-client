@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
 
+import LandingPage from './routes/LandingPage';
 import LoginPage from './routes/LoginPage';
 import NewsPage from './routes/NewsPage';
 import AreaSelectPage from './routes/AreaSelectPage';
@@ -17,7 +18,8 @@ function App() {
     <div className="App">
       <KoboldContextProvider>
         <Switch>
-          <Route path='/' exact component={LoginPage} />
+          <Route path='/' exact component={LandingPage} />
+          <Route path='/login' exact component={LoginPage} />
           <Route path='/register' exact component={RegisterPage} />
           <Route path='/main' exact component={NewsPage} />
           <Route path='/main/areaselect' component={AreaSelectPage} />

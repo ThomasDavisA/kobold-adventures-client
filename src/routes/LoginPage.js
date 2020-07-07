@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LoginForm from '../component/LoginForm';
-import './LoginPage.css'
+import './LoginPage.css';
 
 export default class LoginPage extends Component {
 
@@ -13,6 +13,6 @@ export default class LoginPage extends Component {
                 </div>
                 <LoginForm history={this.props.history} />
             </>
-        )
+        );
     }
 }

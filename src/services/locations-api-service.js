@@ -11,7 +11,7 @@ const LocationsApiService = {
         })
             .then(res => {
                 return res.json();
-            })
+            });
     },
     getAdventure(locationId) {
         return fetch(`${config.API_ENDPOINT}/adventure/${locationId}`, {
@@ -22,7 +22,7 @@ const LocationsApiService = {
         })
             .then(res => {
                 return res.json();
-            })
+            });
     }
 }
 

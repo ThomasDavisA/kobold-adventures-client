@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 import AuthApiService from '../services/auth-api-service';
 import KoboldApiSerivce from '../services/kobolds-api-service';
@@ -14,9 +13,9 @@ export default class RegisterPage extends Component {
     state = { error: null }
 
     handleSubmit = ev => {
-        ev.preventDefault()
-        this.setState({ error: null })
-        const { username, password } = ev.target
+        ev.preventDefault();
+        this.setState({ error: null });
+        const { username, password } = ev.target;
         AuthApiService.postUser({
             username: username.value,
             password: password.value,
@@ -34,21 +33,21 @@ export default class RegisterPage extends Component {
                         KoboldApiSerivce.postKobold(user.user_name)
                             .then(res => {
                                 this.props.history.push(`/main`)
-                            })
+                            });
 
-                    })
+                    });
             })
             .catch(res => {
                 this.setState({ error: res.error })
-            })
+            });
     }
 
     onGoBack = () => {
-        this.props.history.goBack()
+        this.props.history.goBack();
     }
 
     render() {
-        const { error } = this.state
+        const { error } = this.state;
 
         return (
             <>
@@ -82,6 +81,6 @@ export default class RegisterPage extends Component {
                         <h4 className='form__alert--red'>{error}</h4>
                     </div>}
             </>
-        )
+        );
     }
 }

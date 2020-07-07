@@ -11,7 +11,7 @@ const KoboldsApiService = {
         })
             .then(res => {
                 return res.json();
-            })
+            });
     },
     postKobold(username) {
         return fetch(`${config.API_ENDPOINT}/kobold/`, {
@@ -26,7 +26,7 @@ const KoboldsApiService = {
         })
             .then(res => {
                 return res.json();
-            })
+            });
     },
     getAdventureProgress(koboldId) {
         return fetch(`${config.API_ENDPOINT}/adventure/${koboldId}/progress`, {
@@ -37,7 +37,7 @@ const KoboldsApiService = {
         })
             .then(res => {
                 return res.json();
-            })
+            });
     },
     clearAdventureProgress(koboldId) {
         return fetch(`${config.API_ENDPOINT}/adventure/${koboldId}/progress`, {
@@ -46,7 +46,7 @@ const KoboldsApiService = {
                 'content-type': 'application/json',
                 'authorization': `bearer ${TokenService.getAuthToken()}`
             },
-        })
+        });
     },
     getEncounterOutcome(resolutionId, koboldId) {
         return fetch(`${config.API_ENDPOINT}/adventure/resolution/${resolutionId}/${koboldId}`, {
@@ -58,7 +58,7 @@ const KoboldsApiService = {
         })
             .then(res => {
                 return res.json();
-            })
+            });
     },
     getRewards(koboldId) {
         return fetch(`${config.API_ENDPOINT}/adventure/rewards/${koboldId}`, {
@@ -69,7 +69,7 @@ const KoboldsApiService = {
         })
             .then(res => {
                 return res.json();
-            })
+            });
     },
     setKoboldStats(KoboldId, stats) {
         return fetch(`${config.API_ENDPOINT}/kobold/${KoboldId}`, {
@@ -79,7 +79,7 @@ const KoboldsApiService = {
                 'authorization': `bearer ${TokenService.getAuthToken()}`
             },
             body: JSON.stringify({
-                kobold_unspent_points: stats.unspent,    
+                kobold_unspent_points: stats.unspent,
                 kobold_muscle: stats.muscle,
                 kobold_fitness: stats.fitness,
                 kobold_eloquence: stats.eloquence,
@@ -89,7 +89,7 @@ const KoboldsApiService = {
         })
             .then(res => {
                 return;
-            })
+            });
     }
 }
 

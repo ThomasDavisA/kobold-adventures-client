@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 import LocationsService from '../services/locations-api-service';
 import KoboldsContext from '../context/KoboldContext';
-import KoboldsApiService from '../services/kobolds-api-service';
 import AreaButton from '../component/AreaButton';
 
 import './AreaSelectPage.css';
@@ -11,30 +9,19 @@ import './AreaSelectPage.css';
 export default class AreaSelectPage extends Component {
     static contextType = KoboldsContext;
 
-    state = {
-        locations: null,
-    }
+    state = { locations: null }
 
     componentDidMount = () => {
         LocationsService.getLocations()
-            .then(locations => {
-                console.log(locations)
-                this.setState({
-                    locations
-                })
-            })
+            .then(locations => this.setState({ locations }));
     }
 
     renderLocations = () => {
         const render = this.state.locations.map(location => {
             return <AreaButton key={location.location_id} location={location} history={this.props.history} className='location-box__button' />
-        })
+        });
         return render;
 
-    }
-
-    setLocation = event => {
-        //console.log(event);
     }
 
     //Get our Adventure and store it in state
@@ -44,7 +31,7 @@ export default class AreaSelectPage extends Component {
             .then(adventure => {
                 this.context.setAdventure(adventure[0], adventure[1])
                 this.props.history.push(`/main/adventure`);
-            })
+            });
     }
 
     handleGo = () => {
@@ -53,7 +40,7 @@ export default class AreaSelectPage extends Component {
                 .then(adventure => {
                     this.context.setAdventure(adventure[0], adventure[1])
                     this.props.history.push(`/main/adventure`);
-                })
+                });
         }
     }
 
@@ -78,6 +65,6 @@ export default class AreaSelectPage extends Component {
                     }
                 </div>
             </>
-        )
+        );
     }
 }

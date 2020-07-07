@@ -4,12 +4,12 @@ import KoboldsContext from '../context/KoboldContext';
 import AuthApiService from '../services/auth-api-service';
 import KoboldsApiService from '../services/kobolds-api-service';
 
-import './LoginForm.css'
+import './LoginForm.css';
 
 export default class LoginForm extends Component {
     static contextType = KoboldsContext;
 
-    state = { error: null }
+    state = { error: null };
 
     handleSubmit = event => {
         event.preventDefault();
@@ -63,6 +63,6 @@ export default class LoginForm extends Component {
                         <h4>{this.state.error}</h4>
                     </div>}
             </>
-        )
+        );
     }
 }

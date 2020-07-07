@@ -42,13 +42,13 @@ export default class StatusPage extends Component {
             return;
         }
 
-        const statIncrease = this.state[str] + 1
+        const statIncrease = this.state[str] + 1;
         const stats = {
             rendered: true,
             unspent: this.state.unspent - 1,
-        }
+        };
         stats[str] = statIncrease;
-        this.setState(stats)
+        this.setState(stats);
     }
 
     decreaseStat = (str) => {
@@ -56,23 +56,22 @@ export default class StatusPage extends Component {
             return;
         }
 
-
-        const statDecrease = this.state[str] - 1
+        const statDecrease = this.state[str] - 1;
         const stats = {
             rendered: true,
             unspent: this.state.unspent + 1,
-        }
+        };
         stats[str] = statDecrease;
-        this.setState(stats)
+        this.setState(stats);
 
     }
 
     finalizeStatus = () => {
         if (this.state.rendered) {
-            KoboldsApiService.setKoboldStats(this.context.kobold.kobold_id, this.state)
+            KoboldsApiService.setKoboldStats(this.context.kobold.kobold_id, this.state);
         }
 
-        this.props.history.goBack()
+        this.props.history.goBack();
     }
 
     render() {

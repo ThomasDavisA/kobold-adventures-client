@@ -11,13 +11,13 @@ export default class ResolutionButton extends Component {
         KoboldsApiService.getEncounterOutcome(id, this.context.kobold.kobold_id)
             .then(resolve => {
                 this.context.resolveAction(resolve)
-            })
+            });
         
     }
 
     render () {
         return (
             <button className='button__resolution button__resolution--active' onClick={() => this.handleClick(this.props.resolution.id)}>{this.props.resolution.resolution_name}</button>
-        )
+        );
     }
 }

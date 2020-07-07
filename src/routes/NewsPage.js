@@ -19,7 +19,7 @@ export default class NewsPage extends Component {
 
     
     handleLogout = () => {
-        TokenService.clearAuthToken()
+        TokenService.clearAuthToken();
     }
 
     render() {
@@ -33,9 +33,9 @@ export default class NewsPage extends Component {
                 <div className='container__buttons'>
                     <Link className='button-link' to='/main/areaselect'><button className='button'>Go Adventuring!</button></Link>
                     <Link className='button-link' to='/main/status'><button className='button'>Kobold Status</button></Link>
-                    <Link className='button-link' to='/'><button className='button' onClick={() => this.handleLogout()}>Logout</button></Link>
+                    <Link className='button-link' to='/login'><button className='button' onClick={() => this.handleLogout()}>Logout</button></Link>
                 </div>
             </>
-        )
+        );
     }
 }

@@ -27,7 +27,7 @@ export default class AdventurePage extends Component {
 
         const barFill = {
             width: `${this.context.adventure_progress}%`
-        }
+        };
 
         return (
             <div className='adventure-box__header'>
@@ -40,7 +40,7 @@ export default class AdventurePage extends Component {
                 </div>
                 <h4>Progress: {this.context.adventure_progress}%</h4>
             </div>
-        )
+        );
     }
 
 
@@ -51,14 +51,14 @@ export default class AdventurePage extends Component {
                 <h4 className='adventure-box__event-header'>{this.context.adventure.encounter.encounter_name}</h4>
                 <p className='adventure-box__event-text'>{this.context.adventure.encounter.encounter_text}</p>
             </div>
-        )
+        );
     }
 
     renderResolutions = () => {
         const resolutions = this.context.adventure.resolutions;
         const render = resolutions.map(res => {
             return <ResolutionButton key={res.id} resolution={res} className='action-button' />
-        })
+        });
         return render;
     }
 
@@ -72,7 +72,7 @@ export default class AdventurePage extends Component {
                         .then(res => {
                             this.context.clearAdventureProgress();
                             this.props.history.push('/main/adventure/rewards');
-                        })
+                        });
                 }
                 else {
                     this.context.setAdventureProgress(progress);
@@ -80,9 +80,9 @@ export default class AdventurePage extends Component {
                         .then(adventure => {
                             this.context.setAdventure(adventure[0], adventure[1])
                             this.props.history.push(`/main/adventure`);
-                        })
+                        });
                 }
-            })
+            });
     }
 
     render() {
@@ -111,6 +111,6 @@ export default class AdventurePage extends Component {
                     </div>}
 
             </div>
-        )
+        );
     }
 }

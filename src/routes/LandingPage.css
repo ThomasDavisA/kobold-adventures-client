@@ -1,0 +1,35 @@
+.div-landing-page {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ECF6FB;
+    margin: 1em .5em;
+    padding: .5em;
+    border-radius: 1em;
+}
+
+.div-landing-page__list {
+    list-style-type: square;
+}
+
+.div-landing-page__list-element {
+    padding: .35em 0;
+}
+
+.div-landing-page__title {
+    margin-bottom: .5em;
+}
+
+.div-landing-page__text {
+    background-color: #CCD1EF;
+    padding: .75em;
+    border-radius: 1em;
+    margin: 1em;
+}
+
+.div-landing-page__goto-login {
+    width: 80%;
+    height: 2.5em;
+    margin: .5em;
+}

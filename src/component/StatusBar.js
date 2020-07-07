@@ -23,6 +23,6 @@ export default class StatusBar extends Component {
                     </div>
                 </div>
             </>
-        )
+        );
     }
 }
