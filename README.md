@@ -14,7 +14,7 @@ jacob | password3
 
 Upon logging in, you'll be greeted with the news screen, and the choice to adventure or look at your status.  You may assign status points in the status screen, and may re-allocate points whenever you want.  When you go adventuring, you are presented with several locations to pick.  Upon selecing an area, you are then taken to the encounter screens, where you must play out each encounter.  Regardless of success or failure of each encounter, you make progress throughout the day.  At the end of the day, your adventure is complete, and you tally up all the currencies and experience you gain through the adventure.  And that's it!  Continue to explore each area fully to see all the options you can discover, as every encounter has multiple ways of resolving themselves.
 
-![The status screen.](https://i.imgur.com/KXBl3Er.png) ![Going on an adventure!](https://i.imgur.com/LzclImT.png)
+![Going on an adventure!](https://i.imgur.com/KXBl3Er.png) ![The status screen.](https://i.imgur.com/LzclImT.png)
 
 ## Technologies
 
