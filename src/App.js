@@ -14,6 +14,7 @@ import RegisterPage from './routes/RegisterPage';
 import { KoboldContextProvider } from './context/KoboldContext';
 
 function App() {
+
   return (
     <div className="App">
       <KoboldContextProvider>

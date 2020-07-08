@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
+import queryString from 'query-string';
 import LoginForm from '../component/LoginForm';
 import './LoginPage.css';
 
 export default class LoginPage extends Component {
 
+    componentDidMount = () => {
+        const params = queryString.parse(document.location.search);
+        const redirect = params.redirect; // this would be "abcdefg" if the query was "?redirect=abcdefg"
+        if (document.location.pathname === '/' && redirect) {
+          document.location.assign(`${document.location.origin}/${redirect}`);
+        }
+    }
 
     render() {
         return (

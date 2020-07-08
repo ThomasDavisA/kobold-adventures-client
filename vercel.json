@@ -1,6 +1,0 @@
-{
-    "env": {
-        "JWT_TOKEN": "@jwt_token",
-        "API_ENDPOINT": "@api_endpoint"
-    }
-}
