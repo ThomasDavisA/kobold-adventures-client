@@ -9,7 +9,7 @@ export default class LoginPage extends Component {
         const params = queryString.parse(document.location.search);
         const redirect = params.redirect; // this would be "abcdefg" if the query was "?redirect=abcdefg"
         if (document.location.pathname === '/' && redirect) {
-          document.location.assign(`${document.location.origin}/${redirect}`);
+            document.location.assign(`${document.location.origin}/${redirect}`);
         }
     }
 
@@ -20,6 +20,11 @@ export default class LoginPage extends Component {
                     <h1>Kobold Adventures!</h1>
                 </div>
                 <LoginForm history={this.props.history} />
+                <div className='div__header'>
+                    <p>Just want to try it out?  Log in with our test account:</p>
+                    <h4>Username: dunder</h4>
+                    <h4>Password: password</h4>
+                </div>
             </>
         );
     }
