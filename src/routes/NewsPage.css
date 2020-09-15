@@ -1,5 +1,5 @@
 .container__news {
-    background-color: #ECF6FB;
+    background-color: var(--main-color);
     margin: 1em .5em 1em .5em;
     padding: 1em;
     border-radius: 1em;
@@ -10,8 +10,9 @@
 }
 
 .news__text {
-    border: 3px #97c1d2 solid;
-    border-radius: 1em;
+    background-color: var(--main-color-highlight-two);
+    border: 3px var(--main-color-highlight) solid;
+    border-radius: .25em;
     padding: 1em;
 }
 
@@ -23,11 +24,16 @@
 }
 
 .button-link {
-    width: 100%;
+    width: 80vw;
 }
 
-.button {
+.button__menu {
     width: 100%;
     padding: 1em 0;
     margin: .5em;
+    border-radius: 3em 5px;
+}
+
+.button-link:nth-of-type(even) > .button__menu{
+    border-radius: 5px 3em;
 }
