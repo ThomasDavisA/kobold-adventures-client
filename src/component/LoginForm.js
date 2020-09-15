@@ -9,11 +9,14 @@ import './LoginForm.css';
 export default class LoginForm extends Component {
     static contextType = KoboldsContext;
 
-    state = { error: null };
+    state = {
+        error: null,
+        clicked: false
+    };
 
     handleSubmit = event => {
         event.preventDefault();
-        this.setState({ error: null });
+        this.setState({ error: null, clicked: true });
         const { username, password } = event.target;
         AuthApiService.postLogin({
             username: username.value,
@@ -31,6 +34,7 @@ export default class LoginForm extends Component {
 
             })
             .catch(res => {
+                this.setState({ clicked: false })
                 this.setState({ error: res.error });
             })
 
@@ -53,7 +57,7 @@ export default class LoginForm extends Component {
                         <input className='form__input' name='password' type='password' ></input>
                     </div>
                     <div className="form__container">
-                        <button className='form__button button__login' type='submit'>Login</button>
+                        <button className='form__button button__login' type='submit' disabled={this.state.clicked}>Login</button>
                         <button className='form__button button__register' type='button' onClick={() => this.onRegister()}>Register</button>
                     </div>
                 </form>

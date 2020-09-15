@@ -4,10 +4,8 @@
     justify-content: space-evenly;
     height: 60vh;
     padding: .5em 1em;
-    margin: 10vh 1em 2em 1em;
     line-height: 1.4em;
-    background-color: aliceblue;
-    border-radius: 1em;
+    background-color: var(--main-color-highlight-two);
 }
 
 .RegistrationForm__username {
@@ -19,11 +17,11 @@
 }
 
 .form__alert {
-    border: 2px #FFA590 solid;
-    background-color: #FFC3B4;
+    border: 2px var(--warning-color-highlight-two) solid;
+    background-color: var(--warning-color-highlight-two);
     margin: 2em 1em 0 1em;
     padding: 1em;
-    border-radius: 1em;
+    border-radius: .25em;
 }
 
 .form__container {

@@ -18,10 +18,6 @@
     align-items: center;
 }
 
-.form__label {
-
-}
-
 .form__input {
     width: 80%;
     height: 100%;
@@ -51,6 +47,7 @@
 .button__register {
     border: 1px solid var(--second-color-darken-two);
     background-color: var(--second-color-highlight);
+    border-radius: 1px 1em;
 }
 
 .button__register:hover {
@@ -59,9 +56,34 @@
 
 .button__login {
     border: 1px solid var(--third-color-darken-two);
+    border-radius: 1em 1px;
     background-color: var(--third-color-highlight);
 }
 
 .button__login:hover {
     background-color: var(--third-color-highlight-two);
+}
+
+.button__login:disabled {
+    background-color: var(--third-color-darken-two);
+}
+
+@media screen and (min-width: 768px) {
+    .form__container {
+        width: 80vw;
+    }
+
+    .form__button {
+        width: 35vw;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .form__container {
+        width: 60vw;
+    }
+
+    .form__button {
+        width: 25vw;
+    }
 }

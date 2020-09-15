@@ -10,11 +10,17 @@ import './RegisterPage.css';
 export default class RegisterPage extends Component {
     static contextType = KoboldsContext;
 
-    state = { error: null }
+    state = {
+        error: null,
+        clicked: false
+    }
 
     handleSubmit = ev => {
         ev.preventDefault();
-        this.setState({ error: null });
+        this.setState({
+            error: null,
+            clicked: true
+        });
         const { username, password } = ev.target;
         AuthApiService.postUser({
             username: username.value,
@@ -38,6 +44,7 @@ export default class RegisterPage extends Component {
                     });
             })
             .catch(res => {
+                this.setState({ clicked: false })
                 this.setState({ error: res.error })
             });
     }
@@ -51,6 +58,10 @@ export default class RegisterPage extends Component {
 
         return (
             <>
+                <div className='div__header'>
+                    <h1>Kobold Adventures!</h1>
+                </div>
+
                 <form className='RegistrationForm' onSubmit={this.handleSubmit}>
 
                     <h2>Create a new Kobold</h2>
@@ -69,8 +80,8 @@ export default class RegisterPage extends Component {
                     </div>
 
                     <div className='form__container'>
-                        <button className='form__button' type='submit'>Register</button>
-                        <button className='form__button' type='button' onClick={() => this.onGoBack()}>Go Back</button>
+                        <button className='form__button button__login' type='submit' disabled={this.state.clicked}>Register</button>
+                        <button className='form__button button__register' type='button' onClick={() => this.onGoBack()}>Go Back</button>
                     </div>
 
                 </form>
