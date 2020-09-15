@@ -45,16 +45,16 @@ export default class LoginForm extends Component {
             <>
                 <form className='form' onSubmit={this.handleSubmit}>
                     <div className='form__container'>
-                        <label classanme='form__label' htmlFor='username'>Username</label>
+                        <label classanme='form__label' htmlFor='username'>Username:</label>
                         <input className='form__input' name='username' type='text' ></input>
                     </div>
                     <div className='form__container'>
-                        <label classanme='form__label' htmlFor='password'>Password</label>
+                        <label classanme='form__label' htmlFor='password'>Password:</label>
                         <input className='form__input' name='password' type='password' ></input>
                     </div>
                     <div className="form__container">
-                        <button className='form__button' type='submit'>Login</button>
-                        <button type='button' className='form__button' onClick={() => this.onRegister()}>Register</button>
+                        <button className='form__button button__login' type='submit'>Login</button>
+                        <button className='form__button button__register' type='button' onClick={() => this.onRegister()}>Register</button>
                     </div>
                 </form>
 

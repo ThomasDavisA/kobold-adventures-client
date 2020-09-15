@@ -32,14 +32,3 @@
     justify-content: space-between;
     align-items: center;
 }
-
-.form__input {
-    line-height: 2em;
-    padding: 3px;
-}
-
-.form__button {
-    width: 40%;
-    padding: .5em 1em;
-    margin: .5em;
-}

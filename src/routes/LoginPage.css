@@ -1,14 +1,14 @@
 .div__header {
-    margin: 2em .5em;
-    padding: .5em;
-    background-color: aliceblue;
-    border-radius: .5em;
+    margin: 1em 1em;
+    padding: .75em;
+    background-color: var(--main-color-highlight-two);
+    border-radius: .25em;
 }
 
 .error-container {
-    border: 2px #FFA590 solid;
-    background-color: #FFC3B4;
+    border: 2px var(--warning-color-darken-two) solid;
+    background-color: var(--warning-color-highlight-two);
     margin: 2em 1em 0 1em;
     padding: 2em;
-    border-radius: 1em;
+    border-radius: .25em;
 }
