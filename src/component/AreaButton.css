@@ -1,26 +1,26 @@
 .location-button {
     width: 100%;
-    margin: .5em 0;
-    padding: .5em;
+    padding: .75em 0;
     border: 1px grey solid;
-    border-radius: .5em;
+    border-radius: .25em;
+    transition: all .2s ease;
 }
 
 .location-button--expanded {
-    background-color: #CCD1EF;
-    border-radius: 1em;
+    background-color: var(--second-color-highlight);
+    border-radius: .25em;
     padding: .5em;
-    margin: .25em 0;
+    margin: .5em 0;
     line-height: 1.4em;
 }
 
 .location-button__description {
-    background-color: #A2A9D9;
-    border-radius: 1em;
+    background-color: var(--second-color-highlight-two);
+    border-radius: .25em;
     padding: .5em;
     margin-bottom: .5em;
 }
 
 .location-button__level-requirement {
-    color: darkred;
+    color: var(--warning-color-darken-two);
 }

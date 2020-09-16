@@ -20,6 +20,7 @@
 .status-bar__bar-box {
     position: relative;
     top: 1.5em;
+    margin: 0;
     width: 100vw;
     padding-top: .5em;
     background-color: #C8F0D8;

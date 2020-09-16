@@ -4,13 +4,33 @@
     align-items: center;
     justify-content: space-evenly;
     background-color: #ECF6FB;
-    margin: 1em .5em 1em .5em;
-    padding: .75em .5em;
-    border-radius: .5em;
+    margin: 1em 0;
+    padding: 1em .5em;
+}
+
+.location-select-box {
+    height: 50vh;
 }
 
 .location-button__start-adventure, .location-button__go-back {
     width: 40%;
     margin: 1em .5em;
     padding: .5em;
+    border-radius: 3em 1px;
+    background-color: var(--second-color-highlight-two);
+    border: 2px solid var(--second-color-darken);
+    transition: all .2s ease;
 }
+
+.location-button__start-adventure {
+    border-radius: 1px 3em;
+    background-color: var(--third-color-highlight);
+    border: 2px solid var(--third-color-darken-two);
+}
+
+@media screen and (min-width: 768px) {
+    .location-button__start-adventure, .location-button__go-back {
+        width: 30vw;
+    }
+}
+

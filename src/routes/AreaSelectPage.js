@@ -60,9 +60,9 @@ export default class AreaSelectPage extends Component {
 
                 <div className='location-accept'>
                     <button className='location-button__go-back' onClick={() => this.props.history.goBack()}>Go back</button>
-                    {this.context.location &&
-                        <button className='location-button__start-adventure' onClick={() => this.handleGo()}>Go!</button>
-                    }
+                    
+                        <button className='location-button__start-adventure' disabled={!this.context.location} onClick={() => this.handleGo()}>Go!</button>
+                    
                 </div>
             </>
         );

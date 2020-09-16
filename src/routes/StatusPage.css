@@ -3,17 +3,15 @@
     height: 80vh;
     flex-flow: column nowrap;
     justify-content: space-around;
-    background-color: #ECF6FB;
+    background-color: var(--main-color-highlight-two);
     padding: .75em 0;
     animation: slidein-status 3s;
 }
 
 .level-box {
-    border: 2px #6598AD solid;
-    width: 90%;
-    border-radius: 1em;
-    background-color: #C6E0EC;
-
+    width: 100%;
+    padding: 1em 0;
+    background-color: var(--main-color-highlight);
 }
 
 .currency-box {
@@ -21,32 +19,32 @@
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
     margin: 0 auto;
     padding: 1em .25em;
-    border: 2px #6598AD solid;
-    border-radius: 1em;
-    background-color: #C6E0EC;
+}
+
+.currency-type {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
 }
 
 .stats-box {
     display: flex;
     flex-flow: column nowrap;
-    background-color: #CCD1EF;
-    width: 90%;
-    padding: .5em 0;
-    border: .25em #737DBA solid;
-    border-radius: .5em;
+    background-color: var(--second-color-highlight-two);
+    width: 100%;
+    padding: 1em 0;
 }
 
 .stats-box__assignment {
     display: grid;
     align-items: center;
-    padding: 10px;
+    padding: 1em;
     grid-template-columns: auto 25px 25px auto 25px 25px;
     grid-template-rows: 25px 25px 25px;
     row-gap: .75em;
-    column-gap: .25em;
+    column-gap: .5em;
 }
 
 .stats-box__button {
@@ -55,26 +53,46 @@
     margin: 0 .25em;
     border: 1px #ECF6FB solid;
     border-radius: 50%;
-    transition: .1s ease;
+    transition: background-color .2s ease;
+}
+
+.stats-box__button:focus {
+    outline: 1px solid var(--main-color-darken-two)
 }
 
 .stats-box__button--increment:active {
-    background-color: #9CDDB6;
-    border: #6DC18F;
+    background-color: var(--third-color-highlight);
+    border: var(--third-color-darken);
+}
+
+.stats-box__button--decrement {
+    margin-left: -5px;
 }
 
 .stats-box__button--decrement:active {
-    background-color: #FFC3B4;
-    border: #FFA590;
-
+    background-color: var(--warning-color-highlight-two);
+    border: var(--warning-color-darken-two);
 }
 
-.button {
-    width: 80%;
+.button__return {
+    width: 50vw;
     padding: 1em 0;
+    border-radius: 3em 1px;
     margin: .5em auto;
+    background-color: var(--second-color-highlight-two);
+    border: 2px solid var(--second-color-darken-two);
 }
 
 .currency__icon {
     height: 2em;
+}
+
+@media screen and (min-width: 1024px) {
+    .currency-box {
+        width: 75vw;
+    }
+
+    .button__return {
+        width: 30vw;
+    }
 }

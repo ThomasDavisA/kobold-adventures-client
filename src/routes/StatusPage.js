@@ -82,13 +82,13 @@ export default class StatusPage extends Component {
                         <h2>{this.context.kobold.kobold_name}</h2>
                         <div className="level-box">
                             <h3>Level: {this.context.kobold.kobold_level}</h3>
-                            <h4>XP:{this.context.kobold.kobold_xp}</h4>
-                        </div>
+                            <h4>XP: {this.context.kobold.kobold_xp}</h4>
 
-                        <div className='currency-box'>
-                            <h5>Nickels: {this.context.kobold.currency_wood_nickels} </h5><img className='currency__icon' alt='' src={Nickels} />
-                            <h5>Scraps: {this.context.kobold.currency_equipment_scraps} </h5><img className='currency__icon' alt='' src={Scrap} />
-                            <h5>Influence: {this.context.kobold.currency_dragon_influence}</h5> <img className='currency__icon' alt='' src={Influence} />
+                            <div className='currency-box'>
+                                <div className='currency-type'><img className='currency__icon' alt='' src={Nickels} /><h5>Nickels: {this.context.kobold.currency_wood_nickels} </h5></div>
+                                <div className='currency-type'><img className='currency__icon' alt='' src={Scrap} /><h5>Scraps: {this.context.kobold.currency_equipment_scraps} </h5></div>
+                                <div className='currency-type'><img className='currency__icon' alt='' src={Influence} /><h5>Influence: {this.context.kobold.currency_dragon_influence}</h5></div>
+                            </div>
                         </div>
 
                         <div className="stats-box">
@@ -102,7 +102,7 @@ export default class StatusPage extends Component {
                                 <h5>Mana: {this.state.mana}</h5> <button className='stats-box__button stats-box__button--increment' onClick={() => this.increaseStat('mana')}>+</button><button className='stats-box__button stats-box__button--decrement' onClick={() => this.decreaseStat('mana')}>-</button>
                             </div>
                         </div>
-                        <button className='button' onClick={() => this.finalizeStatus()}>Return</button>
+                        <button className='button__return' onClick={() => this.finalizeStatus()}>Return</button>
                     </div>
                 }
 

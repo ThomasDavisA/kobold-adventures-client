@@ -8,18 +8,19 @@
 }
 
 .rewards-box__header {
-    margin: .5em 0;
+    margin: 1em 0;
 }
 
 .rewards-box__treasure {
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
-    padding: 2em;
+    width: 100%;
+    margin: 0 -1em;
+    padding: 1em 0;
     line-height: 1.4em;
-    border: 5px #6DC18F solid;
-    background-color: #9CDDB6;
-    border-radius: .5em;
+    border: 5px var(--third-color-darken) solid;
+    background-color: var(--third-color-highlight-two);
 }
 
 .div__levelup-box {
@@ -27,18 +28,21 @@
     flex-flow: column nowrap;
     justify-content: space-evenly;
     line-height: 1.4em;
-    border: 5px #6DC18F solid;
-    border-radius: .5em;
-    padding: 1.5em;
-    background-color: #9CDDB6;
+    padding: 1em 0;
 }
 
 .rewards-box__list {
     list-style-type: none;
 }
 
+.rewards-box__list__currency {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
 li {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: .25em 0;
 }
@@ -46,10 +50,17 @@ li {
 .rewards-box__button {
     margin: 1em 0;
     padding: 1em 2em;
-    border: 1px grey solid;
-    border-radius: .5em;
+    border: 1px var(--second-color-darken) solid;
+    background-color: var(--second-color-highlight);
+    border-radius: 1em 1px;
+    transition: background-color .2s ease;
 }
 
-.rewards-box__currency-icons {
-
+.rewards-box__button:hover {
+    background-color: var(--second-color-highlight-two);
 }
+
+.currency__icon {
+    margin: 0 .5em;
+}
+

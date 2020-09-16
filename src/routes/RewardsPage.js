@@ -44,18 +44,20 @@ export default class RewardsPage extends Component {
                         <p>Kobold XP: {this.state.rewards.xp}</p>
                         <h4 className='rewards-box__treasure'>Treasure:
                             <ul className='rewards-box__list'>
-                                <li><img className='currency__icon' alt='' src={Nickels} />Wooden Nickels: {this.state.rewards.nickles}</li>
-                                <li><img className='currency__icon' alt='' src={Scrap} />Equipment Scraps: {this.state.rewards.scrap}</li>
-                                <li><img className='currency__icon' alt='' src={Influence} />Dragon Influence: {this.state.rewards.influence}</li>
+                                <li><img className='currency__icon' alt='' src={Nickels} /><div className='rewards-box__list__currency'><span>Wooden Nickels:</span> <span>{this.state.rewards.nickles}</span></div></li>
+                                <li><img className='currency__icon' alt='' src={Scrap} /><div className='rewards-box__list__currency'><span>Equipment Scraps:</span> <span>{this.state.rewards.scrap}</span></div></li>
+                                <li><img className='currency__icon' alt='' src={Influence} /><div className='rewards-box__list__currency'><span>Dragon Influence:</span> <span>{this.state.rewards.influence}</span></div></li>
                             </ul>
+
+
+                            {this.state.levelUp &&
+                                <div className='div__levelup-box'>
+                                    <h3>Level Up!</h3>
+                                    <h4>You gain 3 status points!</h4>
+                                    <p>Use them in the status menu.</p>
+                                </div>}
                         </h4>
 
-                        {this.state.levelUp &&
-                            <div className='div__levelup-box'>
-                                <h3>Level Up!</h3>
-                                <h4>You gain 3 status points!</h4>
-                                <p>Use them in the status menu.</p>
-                            </div>}
 
                         <Link to='/main'>
                             <button className='rewards-box__button'>Hooray!  End your Adventure.</button>

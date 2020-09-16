@@ -2,12 +2,16 @@
     min-height: 4em;
     padding: .5em;
     margin: .25em;
-    border: 2px #6598AD solid;
+    border: 2px var(--main-color-darken) solid;
     border-radius: 1em;
-    background-color: #97C1D2;
-    transition: .2s ease;
+    background-color: var(--main-color-highlight);
+    transition: all .2s ease;
+}
+
+.button__resolution:hover {
+    background-color: var(--main-color-highlight-two);
 }
 
 .button__resolution--active:active {
-    background-color: #6DC18F;
+    background-color: var(--third-color-highlight-two);
 }

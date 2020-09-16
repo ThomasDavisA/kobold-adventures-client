@@ -17,14 +17,14 @@
 }
 
 .container__buttons {
-    width: 100%;
+    width: 80vw;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-evenly;
 }
 
 .button-link {
-    width: 80vw;
+    width: 100%;
 }
 
 .button__menu {
@@ -36,4 +36,16 @@
 
 .button-link:nth-of-type(even) > .button__menu{
     border-radius: 5px 3em;
+}
+
+@media screen and (min-width: 768px) {
+    .container__buttons {
+        width: 60vw;
+    }
+}
+
+@media screen and (min-width: 1024px) {    
+    .container__buttons {
+        width: 50vw;
+    }
 }

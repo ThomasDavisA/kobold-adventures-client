@@ -1,10 +1,10 @@
 .div-adventure-box {
     display: flex;
     justify-content: space-between;
-    height: 85vh;
     align-items: center;
     flex-flow: column nowrap;
     background-color: #ECF6FB;
+    margin: 0 0 20vh 0;
 }
 
 .adventure-box__header {
@@ -21,14 +21,17 @@
     width: 95vw;
 }
 
-.adventure-box__encounter {
-    width: 90%;
+.adventure-box__encounter, .results-box {
+    width: 100%;
     line-height: 1.4em;
-    background-color: #EEF0FC;
-    border: 2px #A2A9D9 solid;
-    border-radius: 1em;
-    margin: .25em;
-    padding: .5em;
+    background-color: var(--second-color-highlight-two);
+    border: 2px var(--second-color-darken) solid;
+    margin: 1em 0;
+    padding: 1em;
+}
+
+.adventure-box__event-text, .results-box p {
+    padding: 1em;
 }
 
 .button-box {
@@ -37,25 +40,15 @@
     justify-content: center;
     width: 95vw;
     margin: .5em 0;
-    border: 2px #A2A9D9 solid;
-    border-radius: 1em;
-    background-color: #EEF0FC;
     grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;
     transition: .2 ease;
 }
 
-.results-box {
-    width: 90%;
-    line-height: 1.4em;
-    margin: .5em 0;
-    margin-bottom: 15vh;
-    background-color: #EEF0FC;
-    border: 2px #A2A9D9 solid;
-    border-radius: 1em;
-    padding: .5em;
-    transition: .2 ease;
-}
+.button-box button:nth-child(1) { border-radius: 2em 1px 1em 1px; }
+.button-box button:nth-child(2) { border-radius: 1px 2em 1px 1em; }
+.button-box button:nth-child(3) { border-radius: 1px 1em 1px 2em; }
+.button-box button:nth-child(4) { border-radius: 1em 1px 2em 1px; }
 
 .results-box__button {
     width: 80%;
@@ -90,4 +83,14 @@
 .adventure-bar__Moon {
     height: 3em;
     margin-left: 1em;
+}
+
+@media screen and (min-width: 768px) {
+    .adventure-box__event-text, .results-box p {
+        padding: 1em 3em;
+    }
+
+    .button-box {
+        margin: 2em 1em;
+    }
 }
